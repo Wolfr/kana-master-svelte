@@ -37,7 +37,7 @@
 <ul class="c-character-grid">
     {#each Hiragana as character }
         <li class="c-character-grid__item">
-            <a href={$url('/c/:detail/hiragana', { detail: character.romaji })}>
+            <a href={$url('/:language/:detail', { detail: character.romaji, language: "hiragana" })}>
                 {character.character}
             </a>
             <!-- {character.romaji} -->
