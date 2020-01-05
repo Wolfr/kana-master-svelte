@@ -16,6 +16,7 @@
 
     // Styling
     export let style = null;
+    export let block = null;
     export let icon = null;
     export let layout = null;
     export let variant = null;
@@ -47,6 +48,10 @@
         vertical-align: baseline;
         color: #333;
         white-space: nowrap;
+    }
+
+    .block {
+        width: 100%;
     }
 
     button[disabled] {
@@ -93,6 +98,7 @@
     {style}
     {classValue}
     class:primary={variant==='primary'}
+    class:block={block}
     class:success={variant==='success'}
     class:ghost={variant==='ghost'}
   >
@@ -105,6 +111,7 @@
             {disabled}
             {classValue}
             {style}
+            class:block={block}
             class:primary={variant==='primary'}
             class:success={variant==='success'}
             class:ghost={variant==='ghost'}
@@ -119,6 +126,7 @@
             {classValue}
             {style}
             on:submit|preventDefault on:click
+            class:block={block}
             class:primary={variant==='primary'}
             class:success={variant==='success'}
             class:ghost={variant==='ghost'}
