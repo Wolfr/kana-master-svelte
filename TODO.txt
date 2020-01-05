@@ -1,4 +1,18 @@
+# Development todo
+
+## General
+
+* Implement icons tab bar (get icons from old design file in Sketch? Or from e-mails to underlined?)
+* Add Apple touch icon
+* Test for mobile
+
+## Detail
+
 * Implement nice transition on drag on detail page
 * Filter the data on detail page so we only show the items that have data when doing next/prev
-* Implement icons tab bar
-* Add page titles for every character
+* Add page titles for every character on detail page
+
+## Quiz
+
+* Continue work on simple quiz in REPL https://svelte.dev/repl/5eb5331bafeb43b7bd7eeb20ad3de508?version=3.16.7
+* Do a proper segmented control component that is based on a radio button internally
