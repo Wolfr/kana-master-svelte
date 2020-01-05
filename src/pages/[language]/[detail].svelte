@@ -45,7 +45,12 @@
   let KatakanaDoubleFiltered = KatakanaDouble.filter(function (el) { return el.character });
 
   let currentDataSet;
-  $: Object.keys($params).forEach(function eachKey(key) { if (key == "language") { language = $params[key]; }});
+
+  // Old solution
+  //$: Object.keys($params).forEach(function eachKey(key) { if (key == "language") { language = $params[key]; }});
+
+  // New solution
+  $: ({ language } = $params)
 
   $: currentDataSet =
      (language == "hiragana") ? HiraganaFiltered
