@@ -5,10 +5,6 @@
 
 <style>
 
-    div {
-        background: #FFF;
-    }
-    
     .alt {
         background: #EEE;
     }
@@ -19,6 +15,6 @@
 
 </style>
 
-<div class:alt={alt} class:spacing={spacing}>
+<div class="c-content-area" class:alt={alt} class:spacing={spacing}>
     <slot></slot>
 </div>

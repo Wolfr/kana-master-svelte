@@ -4,11 +4,11 @@
 </script>
 
 <nav
-    class="
-      c-navbar
-      { borderPosition ? 'c-navbar--bordered-'+borderPosition : ''}
-      { background == 'white' ? 'c-navbar--white' : ''}
-      { background == 'alt' ? 'c-navbar--alt' : ''}
-      ">
+    class="c-navbar"
+    class:c-navbar--bordered-top={ borderPosition == "top" }
+    class:c-navbar--bordered-bottom={ borderPosition == "bottom" }
+    class:c-navbar--white={ background == "white" }
+    class:c-navbar--alt={ background == "alt" }
+>
     <slot></slot>
 </nav>

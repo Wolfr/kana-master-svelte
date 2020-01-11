@@ -16,7 +16,7 @@
     import { isActive, url } from '@sveltech/routify';
 
     const mainTabs = [
-        ['./index', 'Hiragana', 'hiragana'],
+        ['./hiragana', 'Hiragana', 'hiragana'],
         ['./katakana', 'Katakana', 'katakana'],
         ['./quiz', 'Quiz', 'quiz']
       ];
@@ -26,9 +26,7 @@
 <div class="c-scroll-context">
     <slot></slot>
 
-    <NavBar borderPosition="top" background="white">
-
+    <NavBar borderPosition="top" background="alt">
         <TabBar data="{mainTabs}" />
-
     </NavBar>
 </div>

@@ -6,6 +6,7 @@
     import { url } from '@sveltech/routify';
 
     import NavBar from './UI/NavBar.svelte';
+    import ContentArea from './UI/ContentArea.svelte';
 
     import Toolbar from './UI/Toolbar.svelte';
     import ToolbarGroup from './UI/ToolbarGroup.svelte';
@@ -20,7 +21,7 @@
 
 </script>
 
-<NavBar borderPosition="bottom"  background="white">
+<NavBar borderPosition="bottom"  background="alt">
     <Toolbar>
         <ToolbarGroup align="center">
             <ToolbarItem>
@@ -30,7 +31,7 @@
     </Toolbar>
 </NavBar>
 
-<NavBar borderPosition="bottom" background="white">
+<NavBar borderPosition="bottom" background="alt">
     <Toolbar>
         <ToolbarGroup align="justify">
             <ToolbarItem stretch>
@@ -51,21 +52,23 @@
 
 </NavBar>
 
-<ul class="c-character-grid">
-    {#each dataset as character }
-        {#if character.character == ""}
-            <li class="c-character-grid__item">
-                <!-- Cell for layout purposes -->
-            </li>
-            {:else}
-            <li class="c-character-grid__item">
-                <a href={$url('/:language/:detail/', { detail: character.romaji, language: urlLang })}>
-                    {character.character}
-                    <br>
-                    {character.romaji}
-                </a>
-                <!-- {character.romaji} -->
-            </li>
-        {/if}
-    {/each}
-</ul>
+<ContentArea>
+    <ul class="c-character-grid">
+        {#each dataset as character }
+            {#if character.character == ""}
+                <li class="c-character-grid__item">
+                    <!-- Cell for layout purposes -->
+                </li>
+                {:else}
+                <li class="c-character-grid__item">
+                    <a href={$url('/:language/:detail/', { detail: character.romaji, language: urlLang })}>
+                        {character.character}
+                        <br>
+                        {character.romaji}
+                    </a>
+                    <!-- {character.romaji} -->
+                </li>
+            {/if}
+        {/each}
+    </ul>
+</ContentArea>

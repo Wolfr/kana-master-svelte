@@ -91,21 +91,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 32rem;
+        height: 100%;
+        margin: -3.2rem 0 0;
     }
     
-    .c-character-detail > div {
+    .c-character-detail__inner {
         background: #FFF;
         border: 1px solid #CCC;
         border-radius: 0.6rem;
         padding: 3.2rem 0;
     }
 
-    .character {
+    .c-character-detail__character {
         font-size: 9.6rem;
     }
 
-    .romaji {
+    .c-character-detail__romaji {
         margin-top: 1rem;
         font-size: 2.8rem;
     }
@@ -135,9 +136,9 @@
         <div class="c-character-detail">
             {#each currentDataSet as character, index }
                 {#if current == index }
-                <div>
-                    <div class="character">{character.character}</div>
-                    {#if $romajiEnabled}<div class="romaji">{character.romaji}</div>{/if}
+                <div class="c-character-detail__inner">
+                    <div class="c-character-detail__character">{character.character}</div>
+                    {#if $romajiEnabled}<div class="c-character-detail__romaji">{character.romaji}</div>{/if}
                     <audio src="/audio/{character.romaji}.mp3" autoplay={$autoplayEnabled} controls />
                 </div>
                 {/if}
@@ -148,7 +149,7 @@
     </ContentArea>
 </ContentArea>
 
-<NavBar borderPosition="top" background="white">
+<NavBar borderPosition="top" background="alt">
     <Toolbar>
         <ToolbarGroup align="left">
             <ToolbarItem>

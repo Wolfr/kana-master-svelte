@@ -20,8 +20,17 @@
     import { goto } from '@sveltech/routify';
 
 </script>
+    
+<style>
+    
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
 
-<NavBar borderPosition="bottom" background="white">
+</style>
+
+<NavBar borderPosition="bottom" background="alt">
     <Toolbar>
         <ToolbarGroup align="center">
             <ToolbarItem>
