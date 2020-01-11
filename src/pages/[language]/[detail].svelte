@@ -58,10 +58,8 @@
      : KatakanaDoubleFiltered;
 
   let current;
-  let curEq;
 
   $: current = currentDataSet.map( function(e) { return e.romaji; }).indexOf(detail);
-  $: curEq = currentDataSet[current].romaji;
 
   const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
 
@@ -115,7 +113,7 @@
     audio {
         display: block;
         margin: 0;
-        opacity: 0;r
+        opacity: 0;
         height: 0.1px;
     }
 
@@ -128,7 +126,7 @@
         <Toolbar>
             <ToolbarGroup align="left">
                 <ToolbarItem>
-                    <Button icon="chevron-left" href="{$url('/index')}">Back</Button>
+                    <Button icon="chevron-left" href="{$url('../')}">Back</Button>
                 </ToolbarItem>
             </ToolbarGroup>
         </Toolbar>
@@ -140,7 +138,7 @@
                 <div>
                     <div class="character">{character.character}</div>
                     {#if $romajiEnabled}<div class="romaji">{character.romaji}</div>{/if}
-                    <audio src="/audio/{curEq}.mp3" autoplay={$autoplayEnabled} controls />
+                    <audio src="/audio/{character.romaji}.mp3" autoplay={$autoplayEnabled} controls />
                 </div>
                 {/if}
             {:else}
