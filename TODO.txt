@@ -2,8 +2,8 @@
 
 ## General
 
-* Next button is broken
-* Back button is broken
+* Next button is broken in detail view, probably obscured b/c of z-index settings
+* Back button is broken on detail view
 * Implement icons tab bar (get icons from old design file in Sketch? Or from e-mails to underlined?)
 * Add Apple touch icon
 
@@ -15,5 +15,4 @@
 
 ## Quiz
 
-* Continue work on simple quiz in REPL https://svelte.dev/repl/5eb5331bafeb43b7bd7eeb20ad3de508?version=3.16.7
-* Do a proper segmented control component that is based on a radio button internally
+* Do a proper segmented control component that is based on a radio button internally for quiz settings
