@@ -1,6 +1,7 @@
 <script>
 
     import NavBar from '../../UI/NavBar.svelte';
+    import Toggle from '../../UI/Toggle.svelte';
 
     import Toolbar from '../../UI/Toolbar.svelte';
     import ToolbarGroup from '../../UI/ToolbarGroup.svelte';
@@ -20,16 +21,7 @@
 
 </script>
 
-<style>
-    .checkbox-holder {
-        padding: 1rem 0;
-    }
-    .checkbox-holder li {
-        padding: 1rem 0;
-    }
-</style>
-
-<NavBar borderPosition="bottom">
+<NavBar borderPosition="bottom" background="white">
     <Toolbar>
         <ToolbarGroup align="center">
             <ToolbarItem>
@@ -39,17 +31,20 @@
     </Toolbar>
 </NavBar>
 
-<ContentArea>
+<ContentArea spacing>
 
-    <ul class="checkbox-holder">
+    <ul class="c-toggle-list">
         <li>
-            <input type="checkbox" id="useHiragana" checked> <label for="useHiragana">Hiragana</label>
+            <Toggle id="useHiragana" checked />
+            <label for="useHiragana">Hiragana</label>
         </li>
         <li>
-            <input type="checkbox" id="useKatakana"> <label for="useKatakana">Katakana</label>
+            <Toggle id="useKatakana" />
+            <label for="useKatakana">Katakana</label>
         </li>
         <li>
-            <input type="checkbox" for="includeDiacritics"> <label for="includeDiacritics">Include diacritics</label>
+            <Toggle id="includeDiacritics" />
+            <label for="includeDiacritics">Include diacritics</label>
         </li>
     </ul>
 
@@ -61,6 +56,6 @@
         <SegmentedControlItem stretch>Other</SegmentedControlItem>
     </SegmentedControl>
 
-    <Button block variant="primary" on:click={$goto('/quiz/actual')}>Go!</Button>
+    <Button block variant="primary" classValue="u-mt-2" on:click={$goto('/quiz/actual')}>Go!</Button>
 
 </ContentArea>

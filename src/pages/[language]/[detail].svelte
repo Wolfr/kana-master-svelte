@@ -34,6 +34,8 @@
   export let language;
   export let detail;
 
+  $: ({ language } = $params)
+
   // Data
   import Hiragana from '../../hiragana.js';
   import Katakana from '../../katakana.js';
@@ -48,8 +50,6 @@
 
   let currentDataSet;
 
-  // New solution
-  $: ({ language } = $params)
 
   $: currentDataSet =
      (language == "hiragana") ? HiraganaFiltered
@@ -115,7 +115,7 @@
     audio {
         display: block;
         margin: 0;
-        opacity: 0;
+        opacity: 0;r
         height: 0.1px;
     }
 
@@ -128,7 +128,7 @@
         <Toolbar>
             <ToolbarGroup align="left">
                 <ToolbarItem>
-                    <Button icon="chevron-left" href="{$url('./')}">Back</Button>
+                    <Button icon="chevron-left" href="{$url('/index')}">Back</Button>
                 </ToolbarItem>
             </ToolbarGroup>
         </Toolbar>

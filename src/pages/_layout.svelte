@@ -1,7 +1,7 @@
 <script>
 
     import NavBar from '../UI/NavBar.svelte';
-
+    import TabBar from '../UI/TabBar.svelte';
     import Toolbar from '../UI/Toolbar.svelte';
     import ToolbarGroup from '../UI/ToolbarGroup.svelte';
     import ToolbarItem from '../UI/ToolbarItem.svelte';
@@ -16,9 +16,9 @@
     import { isActive, url } from '@sveltech/routify';
 
     const mainTabs = [
-        ['./index', 'Hiragana'],
-        ['./katakana', 'Katakana'],
-        ['./quiz', 'Quiz']
+        ['./index', 'Hiragana', 'hiragana'],
+        ['./katakana', 'Katakana', 'katakana'],
+        ['./quiz', 'Quiz', 'quiz']
       ];
 
 </script>
@@ -28,17 +28,7 @@
 
     <NavBar borderPosition="top" background="white">
 
-        <Toolbar>
-            <ToolbarGroup align="justify">
-                <ToolbarItem stretch>
-                    <SegmentedControl>
-                        {#each mainTabs as [path, name]}
-                            <SegmentedControlItem stretch href={$url(path)} active={$isActive(path)}>{name}</SegmentedControlItem>
-                        {/each}
-                    </SegmentedControl>
-                </ToolbarItem>
-            </ToolbarGroup>
-        </Toolbar>
+        <TabBar data="{mainTabs}" />
 
     </NavBar>
 </div>

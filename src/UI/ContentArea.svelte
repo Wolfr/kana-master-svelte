@@ -18,6 +18,7 @@
     }
 
 </style>
+
 <div class:alt={alt} class:spacing={spacing}>
     <slot></slot>
 </div>
