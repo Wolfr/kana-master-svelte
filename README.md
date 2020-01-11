@@ -39,4 +39,4 @@ npm run build
 ## Deploy
 
 `npm install -g now`
-`cd public && now deploy --name kanamaster`
+`cd public && now deploy --name kanamaster --prod -A ../now.json`
