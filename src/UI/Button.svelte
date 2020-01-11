@@ -32,12 +32,11 @@
    <a
     href="{href}"
     {style}
-    {classValue}
-    class="c-button"
+    class="c-button {classValue ? classValue : ''}"
     class:c-button--primary={variant==='primary'}
     class:c-button--default={!variant}
     class:c-button--ghost={variant==='ghost'}
-    class:block={block}
+    class:c-button--block={block}
   >
         <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
    </a>
@@ -46,13 +45,12 @@
         <button
             type="submit"
             {disabled}
-            {classValue}
+            class="c-button {classValue ? classValue : ''}"
             {style}
-            class="c-button"
             class:c-button--primary={variant==='primary'}
     class:c-button--default={!variant}
             class:c-button--ghost={variant==='ghost'}
-            class:block={block}
+            class:c-button--block={block}
             on:submit on:click
         >
             <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
@@ -61,14 +59,13 @@
         <button
             type="button"
             {disabled}
-            {classValue}
+            class="c-button {classValue ? classValue : ''}"
             {style}
             on:submit|preventDefault on:click
-            class="c-button"
             class:c-button--primary={variant==='primary'}
             class:c-button--default={!variant}
             class:c-button--ghost={variant==='ghost'}
-            class:block={block}
+            class:c-button--block={block}
         >
             <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
         </button>

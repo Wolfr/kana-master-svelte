@@ -56,20 +56,24 @@ body {
 /* Component
    ========================================================================== */
 .c-button {
-  padding: 0.6rem 1rem;
+  padding: 0.9rem 1rem;
   display: inline-flex;
   border-radius: 0.2rem;
   border: none;
+  font-size: 1.6rem;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   appearance: none;
-  font-size: 1.6rem; }
+  -webkit-appearance: none; }
 
 a.c-button {
-  text-decoration: none; }
+  text-decoration: none;
+  padding: 0.6rem 1rem; }
 
 /* Button skins
    ========================================================================== */
 .c-button--default {
-  background: #DDD;
+  background: #EEE;
   color: #333; }
 
 .c-button--ghost {
@@ -93,10 +97,20 @@ a.c-button {
 .c-button--block {
   width: 100%; }
 
+.c-button__label {
+  flex: 1 0 auto;
+  margin-left: 0.4rem; }
+
 /* States
    ========================================================================== */
 .c-button[disabled] {
   opacity: 0.4; }
+
+.c-button__icon-only-wrap {
+  display: flex;
+  align-items: center;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem; }
 
 /* ==========================================================================
   c-segmented-control
@@ -111,12 +125,12 @@ a.c-button {
 .c-segmented-control__item a {
   flex: 1 0 auto;
   display: block;
-  padding: 0.8rem;
+  padding: 0.5rem;
   text-align: center;
   text-decoration: none;
   color: #333;
   background: #EEE;
-  border: 1px solid #DDD; }
+  border: 1px solid #FFF; }
 
 .c-segmented-control__item--active a {
   background: #FFF; }
@@ -200,7 +214,8 @@ a.c-button {
   height: 6.5rem;
   width: 100%;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  background: #FFF; }
 
 .c-navbar--large {
   height: 9.5rem; }
@@ -224,6 +239,31 @@ a.c-button {
 
 .c-navbar--bordered-bottom {
   border-bottom: 0.1rem solid #CCC; }
+
+/* ==========================================================================
+  c-input
+   ========================================================================== */
+.c-input {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  width: 100%;
+  padding: 0.6rem;
+  background: #FFF;
+  color: #333;
+  border: 1px solid #BDBDBD; }
+
+.c-input:focus {
+  outline: 0;
+  border-color: #3A75CB;
+  box-shadow: 0 0 0 0.1rem #0E83FC;
+  transition: 0.1s ease-in-out all; }
+
+.c-input[disabled] {
+  background: #EEE; }
+
+.c-input--center {
+  text-align: center; }
 
 /* ==========================================================================
   Component: Toolbar
@@ -320,22 +360,59 @@ a.c-button {
 /* ==========================================================================
   Tooltip
    ========================================================================== */
-/* Character grid
+/* ==========================================================================
+   c-scroll-context
+   ========================================================================== */
+.c-scroll-context {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.c-scroll-context > * {
+  flex: 0 0 auto; }
+
+.c-scroll-context > .c-character-grid,
+.c-scroll-context > .c-character-detail {
+  flex: 1 1 auto;
+  overflow: scroll; }
+
+@media (min-width: 900px) {
+  html, body {
+    background: #666; }
+  body {
+    display: flex; }
+  .c-scroll-context {
+    position: relative;
+    min-height: 68rem;
+    min-width: 37.5rem;
+    max-height: 80rem;
+    max-width: 45rem;
+    margin: auto; } }
+
+/* ==========================================================================
+  c-character-grid
    ========================================================================== */
 .c-character-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background: #FFF; }
 
 .c-character-grid__item {
   border-bottom: 1px solid #CCC;
   border-right: 1px solid #CCC;
-  text-align: center; }
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: #FFF; }
 
 .c-character-grid__item a {
   padding: 1.5rem 1rem;
   font-size: 1.8rem;
   text-decoration: none;
   display: block;
+  height: 100%;
+  width: 100%;
+  font-weight: 600;
   color: #000;
   font-family: sans-serif; }
 
@@ -349,22 +426,35 @@ a.c-button {
   display: flex; }
 
 /* ==========================================================================
-  Utilities: Spacer
+  u-spacer
+  ---
+  Spacing related utilities
    ========================================================================== */
 .u-spacer {
   padding: 1.6rem; }
 
-.c-scroll-context {
-  height: 100%;
-  display: flex;
-  flex-direction: column; }
+.u-mt {
+  margin-top: 0.8rem; }
 
-.c-scroll-context > * {
-  flex: 0 0 auto; }
+.u-mt-2 {
+  margin-top: 1.6rem; }
 
-.c-scroll-context > .c-character-grid,
-.c-scroll-context > .c-character-detail {
-  flex: 1 1 auto;
-  overflow: scroll; }
+.u-mt-3 {
+  margin-top: 2.4rem; }
+
+/* ==========================================================================
+  u-display
+  ---
+  Display related utilities
+   ========================================================================== */
+.u-d-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
 
 /*# sourceMappingURL=ygdir.css.map */

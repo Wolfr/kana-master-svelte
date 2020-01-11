@@ -20,28 +20,14 @@
 @import "_c-container";
 @import "_c-content";
 @import "_c-navbar";
+@import "_c-input";
 @import "_c-toolbar";
 @import "_c-tooltip";
+@import "_c-scroll-context";
 @import "_c-character-grid";
 
 // Utilities
 @import "_u-flex";
 @import "_u-spacer";
+@import "_u-display";
 
-
-
-.c-scroll-context {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.c-scroll-context > * {
-  flex: 0 0 auto;
-}
-
-.c-scroll-context > .c-character-grid,
-.c-scroll-context > .c-character-detail {
-  flex: 1 1 auto;
-  overflow: scroll;
-}

@@ -7,6 +7,8 @@
   import ButtonToolbar from '../../UI/ButtonToolbar.svelte';
   import NavBar from '../../UI/Navbar.svelte';
 
+  import ContentArea from '../../UI/ContentArea.svelte';
+
   import Toolbar from '../../UI/Toolbar.svelte';
   import ToolbarGroup from '../../UI/ToolbarGroup.svelte';
   import ToolbarItem from '../../UI/ToolbarItem.svelte';
@@ -93,11 +95,11 @@
     .c-character-detail {
         font-family: sans-serif;
         text-align: center;
-        padding: 2rem;
         margin: 0 auto;
         user-select: none;
         display: flex;
         align-items: center;
+        background: #FFF;
     }
 
     .character {
@@ -123,13 +125,13 @@
     <Toolbar>
         <ToolbarGroup align="left">
             <ToolbarItem>
-                <Button variant="ghost" icon="chevron-left" href="{$url('../../')}">Back</Button>
+                <Button icon="chevron-left" href="{$url('../../')}">Back</Button>
             </ToolbarItem>
         </ToolbarGroup>
     </Toolbar>
 </NavBar>
 
-
+<ContentArea>
 <div class="c-character-detail">
     {#each currentDataSet as character, index }
         {#if current == index }
@@ -143,6 +145,7 @@
         <p>No dataset defined.</p>
     {/each}
 </div>
+</ContentArea>
 
 <NavBar borderPosition="top">
     <Toolbar>
