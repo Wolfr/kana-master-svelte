@@ -26,7 +26,7 @@
 <div class="c-scroll-context">
     <slot></slot>
 
-    <NavBar borderPosition="top">
+    <NavBar borderPosition="top" background="white">
 
         <Toolbar>
             <ToolbarGroup align="justify">

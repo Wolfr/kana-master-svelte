@@ -2,6 +2,7 @@
 
 ## General
 
+* Next button is broken
 * Back button is broken
 * Implement icons tab bar (get icons from old design file in Sketch? Or from e-mails to underlined?)
 * Add Apple touch icon

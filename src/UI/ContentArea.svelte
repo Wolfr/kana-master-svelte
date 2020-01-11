@@ -1,11 +1,23 @@
+<script>
+    export let alt = null;
+    export let spacing = null;
+</script>
+
 <style>
 
     div {
-        padding: 1.6rem;
         background: #FFF;
+    }
+    
+    .alt {
+        background: #EEE;
+    }
+    
+    .spacing {
+        padding: 1.6rem;
     }
 
 </style>
-<div>
+<div class:alt={alt} class:spacing={spacing}>
     <slot></slot>
 </div>

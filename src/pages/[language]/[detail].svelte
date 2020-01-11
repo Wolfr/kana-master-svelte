@@ -48,9 +48,6 @@
 
   let currentDataSet;
 
-  // Old solution
-  //$: Object.keys($params).forEach(function eachKey(key) { if (key == "language") { language = $params[key]; }});
-
   // New solution
   $: ({ language } = $params)
 
@@ -59,9 +56,6 @@
      : (language == "katakana") ? KatakanaFiltered
      : (language == "hiragana-digraphs") ? HiraganaDoubleFiltered
      : KatakanaDoubleFiltered;
-
-  //$: console.log(currentDataSet);
-  //$: console.log(detail);
 
   let current;
   let curEq;
@@ -87,7 +81,6 @@
       }
   }
 
-
 </script>
 
 <style>
@@ -99,7 +92,15 @@
         user-select: none;
         display: flex;
         align-items: center;
+        justify-content: center;
+        min-height: 32rem;
+    }
+    
+    .c-character-detail > div {
         background: #FFF;
+        border: 1px solid #CCC;
+        border-radius: 0.6rem;
+        padding: 3.2rem 0;
     }
 
     .character {
@@ -113,41 +114,43 @@
 
     audio {
         display: block;
-        margin: 2rem auto;
+        margin: 0;
         opacity: 0;
+        height: 0.1px;
     }
 
 </style>
 
 <svelte:window on:keyup={handleShortcut} />
 
-<NavBar borderPosition="bottom">
-    <Toolbar>
-        <ToolbarGroup align="left">
-            <ToolbarItem>
-                <Button icon="chevron-left" href="{$url('../../')}">Back</Button>
-            </ToolbarItem>
-        </ToolbarGroup>
-    </Toolbar>
-</NavBar>
-
-<ContentArea>
-<div class="c-character-detail">
-    {#each currentDataSet as character, index }
-        {#if current == index }
-        <div>
-            <div class="character">{character.character}</div>
-            {#if $romajiEnabled}<div class="romaji">{character.romaji}</div>{/if}
-            <audio src="/audio/{curEq}.mp3" autoplay={$autoplayEnabled} controls />
+<ContentArea alt>
+    <NavBar borderPosition="bottom">
+        <Toolbar>
+            <ToolbarGroup align="left">
+                <ToolbarItem>
+                    <Button icon="chevron-left" href="{$url('./')}">Back</Button>
+                </ToolbarItem>
+            </ToolbarGroup>
+        </Toolbar>
+    </NavBar>
+    <ContentArea alt>
+        <div class="c-character-detail">
+            {#each currentDataSet as character, index }
+                {#if current == index }
+                <div>
+                    <div class="character">{character.character}</div>
+                    {#if $romajiEnabled}<div class="romaji">{character.romaji}</div>{/if}
+                    <audio src="/audio/{curEq}.mp3" autoplay={$autoplayEnabled} controls />
+                </div>
+                {/if}
+            {:else}
+                <p>No dataset defined.</p>
+            {/each}
         </div>
-        {/if}
-    {:else}
-        <p>No dataset defined.</p>
-    {/each}
-</div>
+    </ContentArea>
 </ContentArea>
 
-<NavBar borderPosition="top">
+<NavBar borderPosition="top" background="white">
     <Toolbar>
         <ToolbarGroup align="left">
             <ToolbarItem>
@@ -158,7 +161,7 @@
             <ToolbarItem>
                 <ButtonToolbar>
                     <Button on:click="{toggleRomaji}">
-                        Romaji {#if $romajiEnabled}on{:else}off{/if}
+                        Toggle romaji
                     </Button>
                     <Button on:click="{toggleAutoplay}">
                         Sound {#if $autoplayEnabled}on{:else}off{/if}

@@ -20,7 +20,7 @@
 
 </script>
 
-<NavBar borderPosition="bottom">
+<NavBar borderPosition="bottom"  background="white">
     <Toolbar>
         <ToolbarGroup align="center">
             <ToolbarItem>
@@ -30,7 +30,7 @@
     </Toolbar>
 </NavBar>
 
-<NavBar borderPosition="bottom">
+<NavBar borderPosition="bottom" background="white">
     <Toolbar>
         <ToolbarGroup align="justify">
             <ToolbarItem stretch>
@@ -61,6 +61,8 @@
             <li class="c-character-grid__item">
                 <a href={$url('/:language/:detail/', { detail: character.romaji, language: urlLang })}>
                     {character.character}
+                    <br>
+                    {character.romaji}
                 </a>
                 <!-- {character.romaji} -->
             </li>

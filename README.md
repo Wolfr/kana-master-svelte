@@ -35,3 +35,8 @@ To create an optimised version of the app:
 ```bash
 npm run build
 ```
+
+## Deploy
+
+`npm install -g now`
+`now deploy --name kanamaster`

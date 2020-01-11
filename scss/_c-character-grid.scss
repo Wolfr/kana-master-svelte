@@ -19,14 +19,18 @@
 
 .c-character-grid__item a {
   padding: 1.5rem 1rem;
-  font-size: 1.8rem;
   text-decoration: none;
   display: block;
   height: 100%;
   width: 100%;
-  font-weight: 600;
-  color: #000;
-  font-family: sans-serif;
+  color: #666;
+  font-size: 1.4rem;
+  &:first-line {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000;
+    font-family: sans-serif;
+  }
 }
 
 .c-character-grid__item:nth-child(5n) {
