@@ -23,70 +23,6 @@
 
 </script>
 
-<style>
-
-    a, button {
-        font-size: 1.4rem;
-    }
-
-    button {
-        font-family: var(--base-font);
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    a, button {
-        background: #F0F0F0;
-        border: 1px solid #CCC;
-        border-radius: 0.3rem;
-        padding: 0.7rem;
-        align-items: center;
-        display: inline-flex;
-        justify-content: center;
-        vertical-align: baseline;
-        color: #333;
-        white-space: nowrap;
-    }
-
-    .block {
-        width: 100%;
-    }
-
-    button[disabled] {
-        opacity: 0.4;
-    }
-
-    a:focus, button:focus {
-        background: #FFF;
-        outline: 0;
-        border-color: #3A75CB;
-        box-shadow: 0 0 0 0.1rem #3A75CB, 0 0 0 0.4rem #C3DCFF;
-        transition: 0.1s ease-in-out all;
-    }
-
-    .primary {
-        background: #748DD5;
-        border-color: #748DD5;
-        color: #FFF;
-    }
-
-    .success {
-        background: #75D37E;
-        border-color: #75D37E;
-        color: #FFF;
-    }
-
-
-    .ghost {
-        background: #FFF;
-        border-color: #FFf;
-        color: #000;
-    }
-
-</style>
-
 <!--
     @todo de-duplicate some logic here
     @see discussion around classNames package
@@ -97,10 +33,11 @@
     href="{href}"
     {style}
     {classValue}
-    class:primary={variant==='primary'}
+    class="c-button"
+    class:c-button--primary={variant==='primary'}
+    class:c-button--default={!variant}
+    class:c-button--ghost={variant==='ghost'}
     class:block={block}
-    class:success={variant==='success'}
-    class:ghost={variant==='ghost'}
   >
         <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
    </a>
@@ -111,10 +48,11 @@
             {disabled}
             {classValue}
             {style}
+            class="c-button"
+            class:c-button--primary={variant==='primary'}
+    class:c-button--default={!variant}
+            class:c-button--ghost={variant==='ghost'}
             class:block={block}
-            class:primary={variant==='primary'}
-            class:success={variant==='success'}
-            class:ghost={variant==='ghost'}
             on:submit on:click
         >
             <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
@@ -126,10 +64,11 @@
             {classValue}
             {style}
             on:submit|preventDefault on:click
+            class="c-button"
+            class:c-button--primary={variant==='primary'}
+            class:c-button--default={!variant}
+            class:c-button--ghost={variant==='ghost'}
             class:block={block}
-            class:primary={variant==='primary'}
-            class:success={variant==='success'}
-            class:ghost={variant==='ghost'}
         >
             <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
         </button>

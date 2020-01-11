@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "kana-master-svelte",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -7,7 +7,8 @@
     "dev": "run-p watch:routify watch:rollup",
     "watch:rollup": "rollup -c -w",
     "watch:routify": "routify",
-    "start": "sirv public --single"
+    "start": "sirv public --single",
+    "css-dev": "node-sass --watch --recursive --output public/css --source-map true --source-map-contents scss"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",

@@ -1,29 +1,14 @@
 <script>
     export let href;
+    export let stretch;
     export let active;
 </script>
-<style>
 
-    .segmented-control-item a {
-        display: block;
-        padding: 0.8rem;
-        text-align: center;
-        text-decoration: none;
-        color: #333;
-        background: #EEE;
-        border: 1px solid #DDD;
-    }
-
-    .segmented-control-item.active a {
-        background: #FFF
-    }
-
-    .segmented-control-item + .segmented-control-item a {
-        border-left: none;
-    }
-</style>
-
-<li class="segmented-control-item" class:active={active}>
+<li
+    class="c-segmented-control__item"
+    class:c-segmented-control__item--active={active}
+    class:c-segmented-control__item--stretch={stretch}
+>
     <a href="{href}">
         <slot></slot>
     </a>

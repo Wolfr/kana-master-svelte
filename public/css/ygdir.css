@@ -1,0 +1,370 @@
+/*
+  You should write your own CSS through a series of Ygdir conventions.
+*/
+/* ==========================================================================
+  Reset
+   ========================================================================== */
+html, body {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0; }
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+/* ==========================================================================
+   Global variables
+   Prefixed with $g-
+   ========================================================================== */
+/* ==========================================================================
+  Base
+  Only base element styling
+   ========================================================================== */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #FFF;
+  color: #333;
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-size: 1.6rem; }
+
+/* ==========================================================================
+  Block list
+   ========================================================================== */
+.c-block-list__item {
+  padding: 2rem;
+  border-bottom: 0.1rem solid #DDD; }
+
+/* ==========================================================================
+  Button
+   ========================================================================== */
+/* Variables
+   ========================================================================== */
+/* Component
+   ========================================================================== */
+.c-button {
+  padding: 0.6rem 1rem;
+  display: inline-flex;
+  border-radius: 0.2rem;
+  border: none;
+  appearance: none;
+  font-size: 1.6rem; }
+
+a.c-button {
+  text-decoration: none; }
+
+/* Button skins
+   ========================================================================== */
+.c-button--default {
+  background: #DDD;
+  color: #333; }
+
+.c-button--ghost {
+  background: #FFF;
+  border-color: #FFf;
+  color: #000; }
+
+.c-button--primary {
+  background: #0E83FC;
+  color: #FFF; }
+  .c-button--primary:hover, .c-button--primary:focus {
+    background: #409dfd; }
+  .c-button--primary:active {
+    background: #036ad4; }
+
+.c-button--link {
+  color: #0E83FC; }
+
+/* Button variants
+   ========================================================================== */
+.c-button--block {
+  width: 100%; }
+
+/* States
+   ========================================================================== */
+.c-button[disabled] {
+  opacity: 0.4; }
+
+/* ==========================================================================
+  c-segmented-control
+   ========================================================================== */
+.c-segmented-control {
+  width: 100%;
+  display: flex; }
+
+.c-segmented-control__item--stretch {
+  flex: 1 0 auto; }
+
+.c-segmented-control__item a {
+  flex: 1 0 auto;
+  display: block;
+  padding: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  background: #EEE;
+  border: 1px solid #DDD; }
+
+.c-segmented-control__item--active a {
+  background: #FFF; }
+
+.c-segmented-control__item + .c-segmented-control__item a {
+  border-left: none; }
+
+/* ==========================================================================
+  Container
+   ========================================================================== */
+.c-container {
+  width: 96rem;
+  margin: 0 auto; }
+
+/* ==========================================================================
+  Content
+   ========================================================================== */
+.c-h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 1.6rem; }
+
+.c-h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 1.6rem; }
+
+.c-h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 1.6rem; }
+
+.c-p {
+  margin-bottom: 1.6rem; }
+
+.c-ul {
+  margin: 0 0 1.6rem 2.4rem; }
+
+.c-ul > li {
+  list-style: disc; }
+
+.c-content h1 {
+  font-size: 3.2rem;
+  color: #000;
+  margin: 0 0 1.6rem; }
+
+.c-content h2 {
+  font-size: 2.4rem;
+  color: #000;
+  margin: 0 0 1.6rem; }
+
+.c-content h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 1.6rem; }
+
+.c-content p {
+  margin-bottom: 1.6rem; }
+
+.c-content ul {
+  margin: 0 0 1.6rem 2.4rem; }
+
+.c-content li {
+  list-style: disc; }
+
+/* ==========================================================================
+  Component: navbar
+  ---
+  A container for navigational elements
+   ========================================================================== */
+/* Variables
+   ========================================================================== */
+/* Component
+   ========================================================================== */
+.c-navbar {
+  padding: 0 2rem;
+  height: 6.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center; }
+
+.c-navbar--large {
+  height: 9.5rem; }
+
+.c-navbar--no-padding {
+  padding: 0; }
+
+.c-navbar--auto {
+  height: auto; }
+
+.c-navbar--white {
+  background: #FFF; }
+
+.c-navbar--bg-alt {
+  background: #EEE; }
+
+/* Bordered equivalents
+   ========================================================================== */
+.c-navbar--bordered-top {
+  border-top: 0.1rem solid #CCC; }
+
+.c-navbar--bordered-bottom {
+  border-bottom: 0.1rem solid #CCC; }
+
+/* ==========================================================================
+  Component: Toolbar
+  ---
+  Component for aligning multiple sub components on a horizontal axis
+   ========================================================================== */
+/* Variables
+   ========================================================================== */
+/* Component
+   ========================================================================== */
+.c-toolbar {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  height: 4.8rem; }
+
+.c-toolbar--spaced {
+  padding: 0 2.4rem; }
+
+.c-toolbar--auto {
+  height: auto; }
+
+.c-toolbar__left {
+  z-index: 1;
+  justify-content: flex-start; }
+  .c-toolbar__left .c-toolbar__item {
+    margin-right: 1.6rem; }
+    .c-toolbar__left .c-toolbar__item:only-child {
+      margin: 0; }
+
+.c-toolbar__right {
+  z-index: 1;
+  justify-content: flex-end; }
+  .c-toolbar__right .c-toolbar__item {
+    margin-left: 1.6rem; }
+    .c-toolbar__right .c-toolbar__item:only-child {
+      margin: 0; }
+
+.c-toolbar__left,
+.c-toolbar__right {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center; }
+
+.c-toolbar__item {
+  position: relative; }
+
+.c-toolbar__center {
+  position: absolute;
+  margin-left: 50%;
+  left: 0; }
+
+.c-toolbar__center-inner {
+  margin-left: -50%;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  position: relative;
+  z-index: 2; }
+  .c-toolbar__center-inner .c-toolbar__item {
+    margin: 0 0.8rem; }
+    .c-toolbar__center-inner .c-toolbar__item:only-child {
+      margin: 0; }
+
+.c-toolbar__center--interactive {
+  z-index: 2; }
+
+.c-toolbar__center-inner--alt {
+  margin-left: -100%; }
+
+/* Specific children
+   ========================================================================== */
+.c-toolbar__title {
+  font-weight: 600;
+  font-size: 1.8rem; }
+
+/* Justified toolbar
+   ========================================================================== */
+.c-toolbar__justified {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center; }
+  .c-toolbar__justified .c-toolbar__item {
+    margin-right: 1.6rem; }
+
+.c-toolbar__item--stretch {
+  flex: 1; }
+
+.c-toolbar__justified .c-toolbar__item:last-child {
+  margin: 0; }
+
+/* ==========================================================================
+  Tooltip
+   ========================================================================== */
+/* Character grid
+   ========================================================================== */
+.c-character-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+
+.c-character-grid__item {
+  border-bottom: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  text-align: center; }
+
+.c-character-grid__item a {
+  padding: 1.5rem 1rem;
+  font-size: 1.8rem;
+  text-decoration: none;
+  display: block;
+  color: #000;
+  font-family: sans-serif; }
+
+.c-character-grid__item:nth-child(5n) {
+  border-right: none; }
+
+/* ==========================================================================
+  Utilities: Flex
+   ========================================================================== */
+.u-flex {
+  display: flex; }
+
+/* ==========================================================================
+  Utilities: Spacer
+   ========================================================================== */
+.u-spacer {
+  padding: 1.6rem; }
+
+.c-scroll-context {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.c-scroll-context > * {
+  flex: 0 0 auto; }
+
+.c-scroll-context > .c-character-grid,
+.c-scroll-context > .c-character-detail {
+  flex: 1 1 auto;
+  overflow: scroll; }
+
+/*# sourceMappingURL=ygdir.css.map */

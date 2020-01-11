@@ -90,13 +90,14 @@
 
 <style>
 
-    .detail {
+    .c-character-detail {
         font-family: sans-serif;
         text-align: center;
         padding: 2rem;
         margin: 0 auto;
         user-select: none;
-        width: 20rem;
+        display: flex;
+        align-items: center;
     }
 
     .character {
@@ -111,12 +112,7 @@
     audio {
         display: block;
         margin: 2rem auto;
-    }
-
-    .flex {
-        display: flex;
-        align-items: center;
-        padding: 2rem;
+        opacity: 0;
     }
 
 </style>
@@ -134,12 +130,10 @@
 </NavBar>
 
 
-<div class="flex">
-    <Button on:click={prev} variant="ghost" disabled={current==0} layout="icon-only" icon="chevron-left">Previous</Button>
-
+<div class="c-character-detail">
     {#each currentDataSet as character, index }
         {#if current == index }
-        <div class="detail">
+        <div>
             <div class="character">{character.character}</div>
             {#if $romajiEnabled}<div class="romaji">{character.romaji}</div>{/if}
             <audio src="/audio/{curEq}.mp3" autoplay={$autoplayEnabled} controls />
@@ -148,22 +142,30 @@
     {:else}
         <p>No dataset defined.</p>
     {/each}
-
-    <Button on:click={next} variant="ghost" layout="icon-only" icon="chevron-right">Next</Button>
 </div>
 
 <NavBar borderPosition="top">
     <Toolbar>
         <ToolbarGroup align="left">
             <ToolbarItem>
+                <Button on:click={prev} disabled={current==0} layout="icon-only" icon="chevron-left">Previous</Button>
+            </ToolbarItem>
+        </ToolbarGroup>
+        <ToolbarGroup align="center">
+            <ToolbarItem>
                 <ButtonToolbar>
                     <Button on:click="{toggleRomaji}">
                         Romaji {#if $romajiEnabled}on{:else}off{/if}
                     </Button>
                     <Button on:click="{toggleAutoplay}">
-                        Autoplay sound {#if $autoplayEnabled}on{:else}off{/if}
+                        Sound {#if $autoplayEnabled}on{:else}off{/if}
                     </Button>
                 </ButtonToolbar>
+            </ToolbarItem>
+        </ToolbarGroup>
+        <ToolbarGroup align="right">
+            <ToolbarItem>
+                <Button on:click={next} layout="icon-only" icon="chevron-right">Next</Button>
             </ToolbarItem>
         </ToolbarGroup>
     </Toolbar>

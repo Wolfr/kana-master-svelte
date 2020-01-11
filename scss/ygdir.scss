@@ -1,0 +1,47 @@
+// Using Ygdir CSS conventions
+// CSS conventions building upon BEM and ITCSS
+
+/*
+  You should write your own CSS through a series of Ygdir conventions.
+*/
+
+@import "_reset";
+
+// Settings
+@import "_s-variables";
+
+// Elements
+@import "_e-base";
+
+// Components
+@import "_c-block-list";
+@import "_c-button";
+@import "_c-segmented-control";
+@import "_c-container";
+@import "_c-content";
+@import "_c-navbar";
+@import "_c-toolbar";
+@import "_c-tooltip";
+@import "_c-character-grid";
+
+// Utilities
+@import "_u-flex";
+@import "_u-spacer";
+
+
+
+.c-scroll-context {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-scroll-context > * {
+  flex: 0 0 auto;
+}
+
+.c-scroll-context > .c-character-grid,
+.c-scroll-context > .c-character-detail {
+  flex: 1 1 auto;
+  overflow: scroll;
+}

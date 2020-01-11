@@ -18,20 +18,13 @@
     import SegmentedControl from './UI/SegmentedControl.svelte';
     import SegmentedControlItem from './UI/SegmentedControlItem.svelte';
 
-
 </script>
 
 <NavBar borderPosition="bottom">
     <Toolbar>
-        <ToolbarGroup align="left">
-        </ToolbarGroup>
         <ToolbarGroup align="center">
             <ToolbarItem>
                 <ToolbarTitle>{pageTitle}</ToolbarTitle>
-            </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup align="right">
-            <ToolbarItem>
             </ToolbarItem>
         </ToolbarGroup>
     </Toolbar>
@@ -40,16 +33,16 @@
 <NavBar borderPosition="bottom">
     <Toolbar>
         <ToolbarGroup align="justify">
-            <ToolbarItem grow>
+            <ToolbarItem stretch>
                 {#if urlLang.match(/hiragana/)}
                     <SegmentedControl>
-                        <SegmentedControlItem active={!urlLang.match(/digraph/)} href="/">Monographs</SegmentedControlItem>
-                        <SegmentedControlItem active={urlLang.match(/digraph/)} href="/hiragana-digraphs">Digraphs</SegmentedControlItem>
+                        <SegmentedControlItem stretch active={!urlLang.match(/digraph/)} href="/">Monographs</SegmentedControlItem>
+                        <SegmentedControlItem stretch active={urlLang.match(/digraph/)} href="/hiragana-digraphs">Digraphs</SegmentedControlItem>
                     </SegmentedControl>
                 {:else}
                     <SegmentedControl>
-                        <SegmentedControlItem active={urlLang.match(/digraph/)} href="/katakana">Monographs</SegmentedControlItem>
-                        <SegmentedControlItem active={!urlLang.match(/digraph/)} href="/katakana-digraphs">Digraphs</SegmentedControlItem>
+                        <SegmentedControlItem stretch active={urlLang.match(/digraph/)} href="/katakana">Monographs</SegmentedControlItem>
+                        <SegmentedControlItem stretch active={!urlLang.match(/digraph/)} href="/katakana-digraphs">Digraphs</SegmentedControlItem>
                     </SegmentedControl>
                 {/if}
             </ToolbarItem>

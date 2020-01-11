@@ -23,20 +23,22 @@
 
 </script>
 
-<slot></slot>
+<div class="c-scroll-context">
+    <slot></slot>
 
-<NavBar borderPosition="top">
+    <NavBar borderPosition="top">
 
-    <Toolbar>
-        <ToolbarGroup align="justify">
-            <ToolbarItem grow>
-                <SegmentedControl>
-                    {#each mainTabs as [path, name]}
-                        <SegmentedControlItem href={$url(path)} active={$isActive(path)}>{name}</SegmentedControlItem>
-                    {/each}
-                </SegmentedControl>
-            </ToolbarItem>
-        </ToolbarGroup>
-    </Toolbar>
+        <Toolbar>
+            <ToolbarGroup align="justify">
+                <ToolbarItem stretch>
+                    <SegmentedControl>
+                        {#each mainTabs as [path, name]}
+                            <SegmentedControlItem stretch href={$url(path)} active={$isActive(path)}>{name}</SegmentedControlItem>
+                        {/each}
+                    </SegmentedControl>
+                </ToolbarItem>
+            </ToolbarGroup>
+        </Toolbar>
 
-</NavBar>
+    </NavBar>
+</div>

@@ -30,22 +30,15 @@
 
 <NavBar borderPosition="bottom">
     <Toolbar>
-        <ToolbarGroup align="left">
-        </ToolbarGroup>
         <ToolbarGroup align="center">
             <ToolbarItem>
                 <ToolbarTitle>Quiz</ToolbarTitle>
-            </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup align="right">
-            <ToolbarItem>
             </ToolbarItem>
         </ToolbarGroup>
     </Toolbar>
 </NavBar>
 
 <Spacer>
-
 
     <ul class="checkbox-holder">
         <li><input type="checkbox" id="useHiragana" checked> <label for="useHiragana">Hiragana</label></li>
@@ -60,8 +53,7 @@
         <SegmentedControlItem>10</SegmentedControlItem>
         <SegmentedControlItem>Other</SegmentedControlItem>
     </SegmentedControl>
-    <br><br>
 
-    <Button block on:click={$goto('/quiz/actual')}>Go!</Button>
+    <Button block variant="primary" on:click={$goto('/quiz/actual')}>Go!</Button>
 
 </Spacer>
