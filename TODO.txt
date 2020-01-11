@@ -6,6 +6,7 @@
 * Back button is broken on detail view
 * Implement icons tab bar (get icons from old design file in Sketch? Or from e-mails to underlined?)
 * Add Apple touch icon
+* Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 
 ## Detail
 
