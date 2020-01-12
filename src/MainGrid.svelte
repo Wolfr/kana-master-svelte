@@ -42,8 +42,8 @@
                     </SegmentedControl>
                 {:else}
                     <SegmentedControl>
-                        <SegmentedControlItem stretch active={urlLang.match(/digraph/)} href="/katakana">Monographs</SegmentedControlItem>
-                        <SegmentedControlItem stretch active={!urlLang.match(/digraph/)} href="/katakana-digraphs">Digraphs</SegmentedControlItem>
+                        <SegmentedControlItem stretch active={!urlLang.match(/digraph/)} href="/katakana">Monographs</SegmentedControlItem>
+                        <SegmentedControlItem stretch active={urlLang.match(/digraph/)} href="/katakana-digraphs">Digraphs</SegmentedControlItem>
                     </SegmentedControl>
                 {/if}
             </ToolbarItem>

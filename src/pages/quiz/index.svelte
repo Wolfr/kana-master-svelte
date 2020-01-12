@@ -17,7 +17,11 @@
     import SegmentedControl from '../../UI/SegmentedControl.svelte';
     import SegmentedControlItem from '../../UI/SegmentedControlItem.svelte';
 
+    import SegmentedControlRadio from '../../UI/SegmentedControlRadio.svelte';
+
     import { goto } from '@sveltech/routify';
+
+    let radioOptions = [5,10,"Other"];
 
 </script>
     
@@ -57,13 +61,8 @@
         </li>
     </ul>
 
-    <!--@todo rewrite segmented control to support radio buttons -->
     <label>Amount of answers to give</label>
-    <SegmentedControl>
-        <SegmentedControlItem stretch active>5</SegmentedControlItem>
-        <SegmentedControlItem stretch>10</SegmentedControlItem>
-        <SegmentedControlItem stretch>Other</SegmentedControlItem>
-    </SegmentedControl>
+    <SegmentedControlRadio options={radioOptions} />
 
     <Button block variant="primary" classValue="u-mt-2" on:click={$goto('/quiz/actual')}>Go!</Button>
 

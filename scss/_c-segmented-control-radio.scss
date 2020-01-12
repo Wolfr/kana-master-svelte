@@ -1,19 +1,20 @@
 /* ==========================================================================
-  c-segmented-control
-  Used for links, for radio button behavior use c-segmented-control-radio
+  c-segmented-control-radio
+  Used for radios, for link style behavior use c-segmented-control-radio
    ========================================================================== */
 
-.c-segmented-control {
+.c-segmented-control-radio {
   width: 100%;
   display: flex;
 }
 
-.c-segmented-control__item--stretch {
+.c-segmented-control-radio li {
   flex: 1 0 auto;
 }
 
-.c-segmented-control__item a {
-  flex: 1 0 auto;
+
+
+.c-segmented-control-radio__item label {
   display: block;
   padding: 0.5rem;
   text-align: center;
@@ -23,20 +24,22 @@
   border: 1px solid #CCC;
 }
 
-.c-segmented-control__item:first-child a {
+.c-segmented-control-radio__item--active label {
+  background: #FFF;
+}
+
+.c-segmented-control-radio__item input {
+  opacity: 0;
+  width: 0;
+  appearance: none;
+}
+
+.c-segmented-control-radio__item:first-child a {
   border-top-left-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
 }
 
-.c-segmented-control__item:last-child a {
+.c-segmented-control-radio__item:last-child a {
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-}
-
-.c-segmented-control__item--active a {
-  background: #FFF;
-}
-
-.c-segmented-control__item + .c-segmented-control__item a {
-  border-left: none;
 }
