@@ -3,6 +3,8 @@
 ## General
 
 * WBN: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
+* Make favicon in browser simpy the book without the background
+* Center the view of the quiz
 
 ## Detail
 

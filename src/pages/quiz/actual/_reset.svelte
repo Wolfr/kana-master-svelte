@@ -60,28 +60,6 @@
         margin: 2rem 0;
     }
 
-    /* Validation boxes */
-
-    .validation-boxes {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .validation-box {
-        width: 2rem;
-        height: 1rem;
-        display: inline-block;
-        margin-right: 0.2rem;
-    }
-
-    .validation-box.success {
-    background: green;
-    }
-
-    .validation-box.error {
-    background: red;
-    }
-
 </style>
 
 <div class="c-scroll-context">
@@ -111,12 +89,12 @@
         </div>
         {/if}
 
-        <div class="validation-boxes">
+        <div class="c-validation-boxes">
             {#each answersValid as item}
               {#if item}
-                <div class="validation-box success"></div>
+                <div class="c-validation-boxes__box c-validation-boxes__box--success"></div>
               {:else}
-                <div class="validation-box error"></div>
+                <div class="c-validation-boxes__box c-validation-boxes__box--error"></div>
               {/if}
           {/each}
         </div>

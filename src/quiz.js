@@ -149,10 +149,6 @@ export default [
       "romaji":"yu",
   },
   {
-      "character": "",
-      "romaji":"",
-  },
-  {
       "character": "よ",
       "romaji":"yo",
   },

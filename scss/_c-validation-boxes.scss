@@ -1,0 +1,25 @@
+/* ==========================================================================
+   c-validation-boxes
+   ========================================================================== */
+
+.c-validation-boxes {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.c-validation-boxes__box {
+  width: 2rem;
+  height: 1rem;
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+
+.c-validation-boxes__box--success {
+  background: #3D7048;
+}
+
+.c-validation-boxes__box--error {
+  background: #B83D2F;
+}
+
+.c-validation-boxes__box:first-d

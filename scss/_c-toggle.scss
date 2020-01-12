@@ -4,6 +4,14 @@
   A mobile style on/off switch
    ========================================================================== */
 
+/* Variables
+   ========================================================================== */
+
+$c-toggle-primary-color: #5082EC !default;
+
+/* Toggle
+   ========================================================================== */
+
 .c-toggle {
   display: block;
   height: 2.4rem;
@@ -75,7 +83,7 @@
     }
 
     &:checked ~ .c-toggle__back {
-      background-color: #3D82F4;
+      background-color: $c-toggle-primary-color;
     }
 
     &:disabled {
