@@ -17,7 +17,7 @@
   html, body {
     background: #666;
   }
-  
+
   body {
     display: flex;
   }
@@ -25,10 +25,9 @@
   .c-scroll-context {
     position: relative;
     min-height: 64rem;
-    min-width: 37.5rem;
+    width: 37.5rem;
     height: 72rem;
-    max-width: 45rem;
     margin: auto;
   }
-  
+
 }
