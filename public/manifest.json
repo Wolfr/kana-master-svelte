@@ -4,8 +4,8 @@
   "start_url": "index.html", 
   "display": "standalone", 
   "icons": [{ 
-    "src": "./images/logo-pwa.png", 
-    "sizes": "192x192", 
+    "src": "./images/kana-master.png", 
+    "sizes": "1024x1024", 
     "type": "image/png" 
   }] 
 }
