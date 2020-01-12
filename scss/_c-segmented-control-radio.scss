@@ -12,8 +12,6 @@
   flex: 1 0 auto;
 }
 
-
-
 .c-segmented-control-radio__item label {
   display: block;
   padding: 0.5rem;
@@ -22,6 +20,7 @@
   color: #333;
   background: #DDD;
   border: 1px solid #CCC;
+  border-right: none;
 }
 
 .c-segmented-control-radio__item--active label {
@@ -34,12 +33,13 @@
   appearance: none;
 }
 
-.c-segmented-control-radio__item:first-child a {
+.c-segmented-control-radio__item:first-child label {
   border-top-left-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
 }
 
-.c-segmented-control-radio__item:last-child a {
+.c-segmented-control-radio__item:last-child label {
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
+  border-right: 1px solid #CCC;
 }

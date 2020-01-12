@@ -3,7 +3,7 @@
 ## General
 
 * Kill scroll on body overflow hidden
-* Make favicon in browser simpy the book without the background
+* Make favicon in browser simply the book without the background
 * if you click the sound enabled icon, you should get a toast: Sound enabled
 * WBN: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 
@@ -13,20 +13,25 @@
 * If you click the holder in the center, you should go to the next item
 * Implement nice transition on drag on detail page
 * Filter the data on detail page so we only show the items that have data when doing next/prev
-* Add page titles for every character on detail page
+* Add page titles for every character on detail page using svelte:head
 
 ## Quiz settings
 
-* Do a proper segmented control component that is based on a radio button internally for quiz settings
-	* Fix the bugs with the current implementation!
-
-* Pass the amount of quiz items to the generated quiz
-* Implement possibility to use katakana in quiz
+* Sort out settings: label for checkboxes should be:
+  * “Chosen syllabograms”, then values:
+    * Hiragana - All monographs and diacritics
+    * Hiragana - All digraphs, with diacritics
+    * Katakana - All monographs and diacritics
+    * Katakana - All digraphs, with diacritics
+* Sort out the quiz data so it fits with this data (should actually be the same as the data from the home page but with empty items filtered)
+* Implement option to randomize order
+* Quiz question limit: Should be 10, 20, 30 or All characters
 
 ## Quiz actual
  
 * Fix autofocus on the quiz actual
 * Center the view of the quiz actual
+* The boxes should already be there to give you a view of your progress
 
 ## Results
 

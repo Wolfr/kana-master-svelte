@@ -4,6 +4,7 @@ export const quizSettings = writable([
   {
     "hiragana": true,
     "katakana": false,
-    "diacritics": false
+    "diacritics": false,
+    "quizLength": 5
   }
 ]);

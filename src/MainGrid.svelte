@@ -21,6 +21,10 @@
 
 </script>
 
+<svelte:head>
+    <title>{pageTitle} - Kana Master Web</title>
+</svelte:head>
+
 <NavBar borderPosition="bottom"  background="alt">
     <Toolbar>
         <ToolbarGroup align="center">

@@ -16,8 +16,8 @@
 
   // Persistent functions
 
-  import { autoplayEnabled } from '../stores/autoplay.js';
-  import { romajiEnabled } from '../stores/romaji.js';
+  import { autoplayEnabled } from '../../stores/autoplay.js';
+  import { romajiEnabled } from '../../stores/romaji.js';
 
   function toggleAutoplay() {
     autoplayEnabled.update(autoplayEnabled => !autoplayEnabled);
@@ -94,7 +94,7 @@
         height: 100%;
         margin: -3.2rem 0 0;
     }
-    
+
     .c-character-detail__inner {
         background: #FFF;
         border: 1px solid #CCC;

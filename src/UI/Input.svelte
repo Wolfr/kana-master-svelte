@@ -14,7 +14,7 @@
         class="c-input"
         class:c-input--center={center}
         id={labelId ? labelId : id}
-        {autofocus}
+        autofocus={autofocus}
         type="password"
         bind:value={value}
         {disabled}
@@ -25,7 +25,7 @@
         class="c-input"
         class:c-input--center={center}
         id={labelId ? labelId : id}
-        {autofocus}
+        autofocus={autofocus}
         type="text"
         bind:value={value}
         {disabled}

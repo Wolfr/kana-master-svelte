@@ -21,18 +21,28 @@
 
     import { goto } from '@sveltech/routify';
 
-    let radioOptions = [5,10,"Other"];
+    let radioOptions = [5,10,20];
+
+    import { quizSettings } from '../../stores/quizsettings.js';
+
+	function handleRadioGroupSendValue(event) {
+        $quizSettings[0].quizLength = event.detail.text;
+	}
 
 </script>
-    
+
 <style>
-    
+
     label {
         display: block;
         margin-bottom: 0.5rem;
     }
 
 </style>
+
+<svelte:head>
+    <title>Quiz settings - Kana Master Web</title>
+</svelte:head>
 
 <NavBar borderPosition="bottom" background="alt">
     <Toolbar>
@@ -48,21 +58,21 @@
 
     <ul class="c-toggle-list">
         <li>
-            <Toggle id="useHiragana" checked />
+            <Toggle id="useHiragana" bind:checked={$quizSettings[0].hiragana} />
             <label for="useHiragana">Hiragana</label>
         </li>
         <li>
-            <Toggle id="useKatakana" />
+            <Toggle id="useKatakana" bind:checked={$quizSettings[0].katakana} />
             <label for="useKatakana">Katakana</label>
         </li>
         <li>
-            <Toggle id="includeDiacritics" />
+            <Toggle id="includeDiacritics" bind:checked={$quizSettings[0].diacritics} />
             <label for="includeDiacritics">Include diacritics</label>
         </li>
     </ul>
 
     <label>Amount of answers to give</label>
-    <SegmentedControlRadio options={radioOptions} />
+    <SegmentedControlRadio options={radioOptions} on:sendvalue={handleRadioGroupSendValue} />
 
     <Button block variant="primary" classValue="u-mt-2" on:click={$goto('/quiz/actual')}>Go!</Button>
 
