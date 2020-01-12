@@ -160,11 +160,9 @@
             <ToolbarItem>
                 <ButtonToolbar>
                     <Button on:click="{toggleRomaji}">
-                        Toggle romaji
+                        Toggle rōmaji
                     </Button>
-                    <Button on:click="{toggleAutoplay}">
-                        Sound {#if $autoplayEnabled}on{:else}off{/if}
-                    </Button>
+                    <Button on:click="{toggleAutoplay}" layout="icon-only" icon="{ $autoplayEnabled ? 'sound-off': 'sound-on'}">Toggle sound</Button>
                 </ButtonToolbar>
             </ToolbarItem>
         </ToolbarGroup>

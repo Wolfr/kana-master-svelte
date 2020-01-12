@@ -33,10 +33,11 @@
     href="{href}"
     {style}
     class="c-button {classValue ? classValue : ''}"
-    class:c-button--primary={variant==='primary'}
+    class:c-button--primary={variant=='primary'}
     class:c-button--default={!variant}
-    class:c-button--ghost={variant==='ghost'}
+    class:c-button--ghost={variant=='ghost'}
     class:c-button--block={block}
+    class:c-button--icon-only={layout=="icon-only"}
   >
         <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
    </a>
@@ -47,10 +48,11 @@
             {disabled}
             class="c-button {classValue ? classValue : ''}"
             {style}
-            class:c-button--primary={variant==='primary'}
-    class:c-button--default={!variant}
-            class:c-button--ghost={variant==='ghost'}
+            class:c-button--primary={variant=='primary'}
+            class:c-button--default={!variant}
+            class:c-button--ghost={variant=='ghost'}
             class:c-button--block={block}
+            class:c-button--icon-only={layout=="icon-only"}
             on:submit on:click
         >
             <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
@@ -62,10 +64,11 @@
             class="c-button {classValue ? classValue : ''}"
             {style}
             on:submit|preventDefault on:click
-            class:c-button--primary={variant==='primary'}
+            class:c-button--primary={variant=='primary'}
             class:c-button--default={!variant}
-            class:c-button--ghost={variant==='ghost'}
+            class:c-button--ghost={variant=='ghost'}
             class:c-button--block={block}
+            class:c-button--icon-only={layout=="icon-only"}
         >
             <ButtonInnerLayout {icon} {layout}><slot></slot></ButtonInnerLayout>
         </button>

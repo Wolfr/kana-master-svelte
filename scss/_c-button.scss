@@ -12,7 +12,8 @@ $c-button-link-color: $c-button-primary-color !default;
    ========================================================================== */
 
 .c-button {
-  padding: 0.9rem 1rem;
+  padding: 0.8rem 1rem;
+  line-height: 1.4;
   display: inline-flex;
   border-radius: 0.4rem;
   border: none;
@@ -21,7 +22,15 @@ $c-button-link-color: $c-button-primary-color !default;
   font-family: $g-font-family;
   appearance: none;
   -webkit-appearance: none;
+}
 
+.c-button.c-button--icon-only {
+  padding: 0.8rem 0.8rem;
+  .svg-icon {
+    margin-top: 0;
+    position: relative;
+    top: 0.2rem;
+  }
 }
 
 a.c-button {
@@ -85,6 +94,6 @@ a.c-button {
 .c-button__icon-only-wrap {
   display: flex;
   align-items: center;
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
 }
