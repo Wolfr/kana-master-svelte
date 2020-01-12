@@ -2,9 +2,6 @@
 
 ## General
 
-* Next button is broken in detail view, probably obscured b/c of z-index settings
-* Back button is broken on detail view, some issue with routify and data
-* Add Apple touch icon (app icon)
 * WBN: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 
 ## Detail

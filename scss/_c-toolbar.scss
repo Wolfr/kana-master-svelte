@@ -10,8 +10,8 @@
 $c-toolbar-item-spacing: 1.6rem !default;
 $c-toolbar-main-border-color: #DDD !default;
 $c-toolbar-bar-size-regular: 4.8rem;
-$c-toolbar-z: 2;
-$c-toolbar-middle-z: 1;
+$c-toolbar-z: 1;
+$c-toolbar-middle-z: 2;
 $c-toolbar-title-heading-font-weight: 600;
 
 /* Component
@@ -63,20 +63,17 @@ $c-toolbar-title-heading-font-weight: 600;
   align-items: center;
 }
 
-.c-toolbar__item {
-  position: relative;
-}
 
 .c-toolbar__center {
-  position: absolute;
-  margin-left: 50%;
-  left: 0;
-  position: relative;
-  z-index: $c-toolbar-middle-z;
+  transform: translate(50%);
+  .c-toolbar__item {
+    position: relative;
+    z-index: $c-toolbar-middle-z;
+  }
 }
 
 .c-toolbar__center-inner {
-  margin-left: -50%;
+  transform: translate(-50%);
   display: flex;
   flex: 1 0 auto;
   align-items: center;
