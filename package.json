@@ -1,6 +1,15 @@
 {
   "name": "kana-master-svelte",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wolfr/kana-master-svelte.git"
+  },
+  "author": "johan.ronsse@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wolfr/kana-master-svelte/issues"
+  },
   "scripts": {
     "build": "rollup -c",
     "buildnow": "npm run build && cd public && now --prod",
@@ -24,7 +33,7 @@
     "ygdir": "^1.19.1"
   },
   "dependencies": {
-    "@sveltech/routify": "^1.0.1-27",
+    "@sveltech/routify": "^1.0.1-29",
     "sirv-cli": "^0.4.4"
   }
 }

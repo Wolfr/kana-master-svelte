@@ -47,9 +47,9 @@ a.c-button {
 }
 
 .c-button--ghost {
-  background: #FFF;
-  border-color: #FFf;
-  color: #000;
+  background: transparent;
+  border-color: transparent;
+  color: #333;
 }
 
 .c-button--primary {

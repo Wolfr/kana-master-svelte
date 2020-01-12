@@ -1,5 +1,7 @@
 <script>
 
+  import { fade } from 'svelte/transition';
+
   // UI controls
 
   import Icon from '../../UI/Icon.svelte';
@@ -33,6 +35,7 @@
 
   export let language;
   export let detail;
+  let audioBox;
 
   $: ({ language } = $params)
 
@@ -79,6 +82,10 @@
       }
   }
 
+  function playSound() {
+      audioBox.play();
+  }
+
 </script>
 
 <style>
@@ -122,38 +129,36 @@
 
 <svelte:window on:keyup={handleShortcut} />
 
+<NavBar borderPosition="bottom" background="alt">
+    <Toolbar>
+        <ToolbarGroup align="left">
+            <ToolbarItem>
+                <Button icon="chevron-left" variant="ghost" href="{$url('../../')}">Back</Button>
+            </ToolbarItem>
+        </ToolbarGroup>
+    </Toolbar>
+</NavBar>
 <ContentArea alt>
-    <NavBar borderPosition="bottom">
-        <Toolbar>
-            <ToolbarGroup align="left">
-                <ToolbarItem>
-                    <Button icon="chevron-left" href="{$url('../')}">Back</Button>
-                </ToolbarItem>
-            </ToolbarGroup>
-        </Toolbar>
-    </NavBar>
-    <ContentArea alt>
-        <div class="c-character-detail">
-            {#each currentDataSet as character, index }
-                {#if current == index }
-                <div class="c-character-detail__inner">
-                    <div class="c-character-detail__character">{character.character}</div>
-                    {#if $romajiEnabled}<div class="c-character-detail__romaji">{character.romaji}</div>{/if}
-                    <audio src="/audio/{character.romaji}.mp3" autoplay={$autoplayEnabled} controls />
-                </div>
-                {/if}
-            {:else}
-                <p>No dataset defined.</p>
-            {/each}
-        </div>
-    </ContentArea>
+    <div class="c-character-detail">
+        {#each currentDataSet as character, index }
+            {#if current == index }
+            <div class="c-character-detail__inner" on:click={playSound}>
+                <div class="c-character-detail__character">{character.character}</div>
+                {#if $romajiEnabled}<div class="c-character-detail__romaji">{character.romaji}</div>{/if}
+                <audio src="/audio/{character.romaji}.mp3" bind:this={audioBox} autoplay={$autoplayEnabled} controls />
+            </div>
+            {/if}
+        {:else}
+            <p>No dataset defined.</p>
+        {/each}
+    </div>
 </ContentArea>
 
 <NavBar borderPosition="top" background="alt">
     <Toolbar>
         <ToolbarGroup align="left">
             <ToolbarItem>
-                <Button on:click={prev} disabled={current==0} layout="icon-only" icon="chevron-left">Previous</Button>
+                <Button on:click={prev} variant="ghost" disabled={current==0} layout="icon-only" icon="chevron-left">Previous</Button>
             </ToolbarItem>
         </ToolbarGroup>
         <ToolbarGroup align="center">
@@ -168,7 +173,7 @@
         </ToolbarGroup>
         <ToolbarGroup align="right">
             <ToolbarItem>
-                <Button on:click={next} layout="icon-only" icon="chevron-right">Next</Button>
+                <Button on:click={next} variant="ghost" layout="icon-only" icon="chevron-right">Next</Button>
             </ToolbarItem>
         </ToolbarGroup>
     </Toolbar>
