@@ -1,6 +1,8 @@
 <script>
 
   import { fade } from 'svelte/transition';
+  import { tweened } from 'svelte/motion';
+  import { cubicIn } from 'svelte/easing';
 
   // UI controls
 
@@ -37,6 +39,12 @@
   export let detail;
   let audioBox;
 
+  let viewportWidth;
+  let viewportHeight;
+  let boxWidth;
+  $: boxWidth = viewportWidth/1;
+
+
   $: ({ language } = $params)
 
   // Data
@@ -53,21 +61,23 @@
 
   let currentDataSet;
 
-
   $: currentDataSet =
      (language == "hiragana") ? HiraganaFiltered
      : (language == "katakana") ? KatakanaFiltered
      : (language == "hiragana-digraphs") ? HiraganaDoubleFiltered
      : KatakanaDoubleFiltered;
 
-  let current;
+  let current = tweened(0, {
+    duration: 200,
+    easing: cubicIn
+  });
 
-  $: current = currentDataSet.map( function(e) { return e.romaji; }).indexOf(detail);
+  $: $current = currentDataSet.map( function(e) { return e.romaji; }).indexOf(detail);
 
   const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
 
-  function prev(e) { current = clamp( --current, 0, currentDataSet.length-1 ); }
-  function next(e) { current = clamp( ++current, 0, currentDataSet.length-1 ); }
+  function prev(e) { $current = clamp( --$current, 0, currentDataSet.length-1 ); }
+  function next(e) { $current = clamp( ++$current, 0, currentDataSet.length-1 ); }
 
   // Shortcuts
   const ARROW_LEFT = 37;
@@ -86,44 +96,84 @@
       audioBox.play();
   }
 
+import { spring } from 'svelte/motion';
+import { pannable } from '../pannable.js';
+
+const coords = spring({ x: 0, y: 0 }, {
+	stiffness: 0.2,
+	damping: 0.4
+});
+
+function handlePanStart() {
+	coords.stiffness = coords.damping = 1;
+}
+
+function handlePanMove(event) {
+	coords.update($coords => ({
+		x: $coords.x + event.detail.dx,
+		y: $coords.y + event.detail.dy
+	}));
+}
+
+function handlePanEnd(event) {
+	coords.stiffness = 0.2;
+	coords.damping = 0.4;
+	coords.set({ x: 0, y: 0 });
+}
+
 </script>
 
 <style>
 
-    .c-character-detail {
-        font-family: sans-serif;
-        text-align: center;
-        margin: 0 auto;
-        user-select: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        margin: -3.2rem 0 0;
-    }
+  .viewport {
+    overflow: hidden;
+    height: 100%;
+  }
 
-    .c-character-detail__inner {
-        background: #FFF;
-        border: 1px solid #CCC;
-        border-radius: 0.6rem;
-        padding: 3.2rem 0;
-    }
+  .box-wrapper {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
 
-    .c-character-detail__character {
-        font-size: 9.6rem;
-    }
+  .box {
+    float: left;
+    text-align: center;
+    opacity: 0.5;
+    padding: 2rem 0;
+    display: flex;
+  }
 
-    .c-character-detail__romaji {
-        margin-top: 1rem;
-        font-size: 2.8rem;
-    }
+  .inner {
+    background: #FFF;
+    margin: 0 auto;
+    padding: 8rem;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #CCC;
+  }
 
-    audio {
-        display: block;
-        margin: 0;
-        opacity: 0;
-        height: 0.1px;
-    }
+  .active {
+    opacity: 1;
+  }
+
+  .character {
+    font-size: 9.6rem;
+  }
+
+  .romaji {
+    margin-top: 1rem;
+    font-size: 2.8rem;
+  }
+
+  audio {
+    display: block;
+    margin: 0;
+    opacity: 0.01;
+    height: 0.1px;
+  }
 
 </style>
 
@@ -138,20 +188,43 @@
         </ToolbarGroup>
     </Toolbar>
 </NavBar>
+
 <ContentArea alt>
-    <div class="c-character-detail">
-        {#each currentDataSet as character, index }
-            {#if current == index }
-            <div class="c-character-detail__inner" on:click={playSound}>
-                <div class="c-character-detail__character">{character.character}</div>
-                {#if $romajiEnabled}<div class="c-character-detail__romaji">{character.romaji}</div>{/if}
-                <audio src="/audio/{character.romaji}.mp3" bind:this={audioBox} autoplay={$autoplayEnabled} controls />
+
+    <div class="viewport" bind:offsetWidth={viewportWidth} bind:offsetHeight={viewportHeight}>
+      <div class="box-wrapper"
+           style="
+                  width: {currentDataSet.length*boxWidth}px;
+                  margin-left: {viewportWidth/2 - boxWidth/2}px;
+                  transform: translate( -{ $current * boxWidth }px)
+                ">
+         {#each currentDataSet as character, index}
+          <div class="box" style="width: {boxWidth}px; " class:active={$current == index} on:click={playSound}>
+            <div class="inner"
+            	use:pannable
+            	on:panstart={handlePanStart}
+            	on:panmove={handlePanMove}
+            	on:panend={handlePanEnd}
+            	style="transform:
+            		translate({$coords.x}px,{$coords.y}px)
+            		rotate({$coords.x * 0.2}deg)"
+            >
+              <div class="character">{character.character}</div>
+              {#if $romajiEnabled}<div class="romaji">{character.romaji}</div>{/if}
             </div>
-            {/if}
+          </div>
         {:else}
             <p>No dataset defined.</p>
         {/each}
+      </div>
     </div>
+
+    {#each currentDataSet as character, index}
+        {#if $current == index }
+            <audio src="/audio/{character.romaji}.mp3" bind:this={audioBox} autoplay={$autoplayEnabled} controls />
+        {/if}
+    {/each}
+
 </ContentArea>
 
 <NavBar borderPosition="top" background="alt">

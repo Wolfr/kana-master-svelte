@@ -35,3 +35,11 @@
 @import "_u-flex";
 @import "_u-spacer";
 @import "_u-display";
+
+body, html {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	margin:0;
+	padding: 0;
+}
