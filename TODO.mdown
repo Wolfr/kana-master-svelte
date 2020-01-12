@@ -2,7 +2,10 @@
 
 ## General
 
+<<<<<<< HEAD
 * Kill scroll on body overflow hidden
+=======
+>>>>>>> 3a029ffed572e61154839fbf68f456aa193b8076
 * Make favicon in browser simpy the book without the background
 * if you click the sound enabled icon, you should get a toast: Sound enabled
 * WBN: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
