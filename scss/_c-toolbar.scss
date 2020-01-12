@@ -10,8 +10,8 @@
 $c-toolbar-item-spacing: 1.6rem !default;
 $c-toolbar-main-border-color: #DDD !default;
 $c-toolbar-bar-size-regular: 4.8rem;
-$c-toolbar-z: 1;
-$c-toolbar-middle-z: 2;
+$c-toolbar-z: 2;
+$c-toolbar-middle-z: 1;
 $c-toolbar-title-heading-font-weight: 600;
 
 /* Component
@@ -71,6 +71,8 @@ $c-toolbar-title-heading-font-weight: 600;
   position: absolute;
   margin-left: 50%;
   left: 0;
+  position: relative;
+  z-index: $c-toolbar-middle-z;
 }
 
 .c-toolbar__center-inner {
@@ -78,8 +80,6 @@ $c-toolbar-title-heading-font-weight: 600;
   display: flex;
   flex: 1 0 auto;
   align-items: center;
-  position: relative;
-  z-index: $c-toolbar-middle-z;
   .c-toolbar__item {
     margin: 0 $c-toolbar-item-spacing/2;
     &:only-child {
