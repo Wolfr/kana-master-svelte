@@ -2,10 +2,9 @@
 
 ## General
 
-* WBN: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 * Make favicon in browser simpy the book without the background
-* Center the view of the quiz
 * if you click the sound enabled icon, you should get a toast: Sound enabled
+* WBN: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 
 ## Detail
 
@@ -13,11 +12,19 @@
 * Filter the data on detail page so we only show the items that have data when doing next/prev
 * Add page titles for every character on detail page
 
-## Quiz
+## Quiz settings
 
 * Do a proper segmented control component that is based on a radio button internally for quiz settings
 	* Fix the bugs with the current implementation!
 
 * Pass the amount of quiz items to the generated quiz
 * Implement possibility to use katakana in quiz
+
+## Quiz actual
+ 
+* Fix autofocus on the quiz actual
+* Center the view of the quiz actual
+
+## Results
+
 * Implement a way to view quiz results (see screenshot)
