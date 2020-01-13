@@ -1,25 +1,40 @@
 <script>
   import { url, params } from '@sveltech/routify';
-
-  // Data
-  import Hiragana from './data/hiragana.js';
-  let HiraganaFiltered = Hiragana.filter(function (el) { return el.character });
-
-  import { getRandom } from './getRandom.js';
+  import _ from 'lodash';
 
   // UI
   import Button from './UI/Button.svelte';
   import Input from './UI/Input.svelte';
 
-  export let quizLength = 5;
+  // Data
+  import Hiragana from './data/hiragana.js';
+  import HiraganaDouble from './data/hiragana-digraphs.js';
+  import Katakana from './data/katakana.js';
+  import KatakanaDouble from './data/katakana-digraphs.js';
 
+  // Filter data
+  let HiraganaFiltered = Hiragana.filter(function (el) { return el.character });
+  let HiraganaDoubleFiltered = HiraganaDouble.filter(function (el) { return el.character });
+  let KatakanaFiltered = Katakana.filter(function (el) { return el.character });
+  let KatakanaDoubleFiltered = KatakanaDouble.filter(function (el) { return el.character });
+
+  import { getRandom } from './getRandom.js';
+
+  // Quiz settings
+  export let quizLength = 5;
   export let useHiragana = true;
   export let useKatakana = false;
   export let useHiraganaDouble = false;
   export let useKatakanaDouble = false;
 
-  // @todo sort out the data change
-  let quizOptions = getRandom(HiraganaFiltered, quizLength);
+
+  // Todo, make sure we only provide the specified options in our quiz
+  let dataset = _.unionBy(KatakanaFiltered, HiraganaFiltered, HiraganaDoubleFiltered, KatakanaDoubleFiltered);
+  let quizOptions = getRandom(dataset, quizLength);
+
+
+
+  // Quiz locgic and validation
 
   let currentQuizQuestion = 0;
   let answersValid = [];
