@@ -38,6 +38,16 @@
         margin-bottom: 0.5rem;
     }
 
+    label span {
+        font-size: 1.3rem;
+        display: block;
+        opacity: 0.7;
+    }
+
+    :global(.c-toggle-list .c-toggle) {
+        margin-top: 1rem;
+    }
+
 </style>
 
 <svelte:head>
@@ -56,18 +66,35 @@
 
 <ContentArea spacing>
 
+    <p>Chosen syllabograms</p>
+
     <ul class="c-toggle-list">
         <li>
             <Toggle id="useHiragana" bind:checked={$quizSettings[0].hiragana} />
-            <label for="useHiragana">Hiragana</label>
+            <label for="useHiragana">
+                Hiragana
+                <span>All monographs and diacritics</span>
+            </label>
+        </li>
+        <li>
+            <Toggle id="useHiraganaDouble" bind:checked={$quizSettings[0].hiraganaDouble} />
+            <label for="useHiraganaDouble">
+                Hiragana
+                <span>All digraphs, with diacritics</span>
+            </label>
         </li>
         <li>
             <Toggle id="useKatakana" bind:checked={$quizSettings[0].katakana} />
-            <label for="useKatakana">Katakana</label>
+            <label for="useKatakana">
+                Katakana
+                <span>All monographs and diacritics</span></label>
         </li>
         <li>
-            <Toggle id="includeDiacritics" bind:checked={$quizSettings[0].diacritics} />
-            <label for="includeDiacritics">Include diacritics</label>
+            <Toggle id="useKatakanaDouble" bind:checked={$quizSettings[0].katakanaDouble} />
+            <label for="useKatakanaDouble">
+                Katakana
+                <span>All digraphs, with diacritics</span>
+            </label>
         </li>
     </ul>
 

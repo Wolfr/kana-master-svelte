@@ -1,6 +1,6 @@
 <script>
     import MainGrid from '../MainGrid.svelte';
-    import Katakana from '../katakana.js';
+    import Katakana from '../data/katakana.js';
 </script>
 
 <MainGrid pageTitle="Katakana" urlLang="katakana" dataset={Katakana} />

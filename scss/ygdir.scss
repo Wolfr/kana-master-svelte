@@ -1,19 +1,19 @@
-// Using Ygdir CSS conventions
-// CSS conventions building upon BEM and ITCSS
-
-/*
-  You should write your own CSS through a series of Ygdir conventions.
-*/
+/* ==========================================================================
+  CSS for Kana Master
+  --
+  Using Ygdir CSS conventions
+  CSS conventions building upon BEM and ITCSS
+   ========================================================================== */
 
 @import "_reset";
 
-// Settings
+/* Settings */
 @import "_s-variables";
 
-// Elements
+/* Elements */
 @import "_e-base";
 
-// Components
+/* Components */
 @import "_c-block-list";
 @import "_c-button";
 @import "_c-character-grid";
@@ -31,15 +31,8 @@
 @import "_c-toolbar";
 @import "_c-validation-boxes";
 
-// Utilities
+/* Utilities */
+
 @import "_u-flex";
 @import "_u-spacer";
 @import "_u-display";
-
-body, html {
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
-	margin:0;
-	padding: 0;
-}

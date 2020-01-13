@@ -1,8 +1,13 @@
 <script>
   import { url, params } from '@sveltech/routify';
 
-  import quizOptionsSrcHiragana from './quiz-questions-hiragana.js';
+  // Data
+  import Hiragana from './data/hiragana.js';
+  let HiraganaFiltered = Hiragana.filter(function (el) { return el.character });
+
   import { getRandom } from './getRandom.js';
+
+  // UI
   import Button from './UI/Button.svelte';
   import Input from './UI/Input.svelte';
 
@@ -10,10 +15,11 @@
 
   export let useHiragana = true;
   export let useKatakana = false;
-  export let includeDiacritics = false;
+  export let useHiraganaDouble = false;
+  export let useKatakanaDouble = false;
 
   // @todo sort out the data change
-  let quizOptions = getRandom(quizOptionsSrcHiragana, quizLength);
+  let quizOptions = getRandom(HiraganaFiltered, quizLength);
 
   let currentQuizQuestion = 0;
   let answersValid = [];

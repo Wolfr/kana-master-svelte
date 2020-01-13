@@ -18,7 +18,7 @@
   import ToolbarItem from '../../UI/ToolbarItem.svelte';
   import ToolbarTitle from '../../UI/ToolbarTitle.svelte';
 
-  // Persistent functions
+  // Persist options through stores
 
   import { autoplayEnabled } from '../../stores/autoplay.js';
   import { romajiEnabled } from '../../stores/romaji.js';
@@ -37,23 +37,18 @@
 
   export let language;
   export let detail;
-  let audioBox;
-
-  let viewportWidth;
-  let viewportHeight;
-  let boxWidth;
-  $: boxWidth = viewportWidth/1;
-
 
   $: ({ language } = $params)
 
   // Data
-  import Hiragana from '../../hiragana.js';
-  import Katakana from '../../katakana.js';
-  import HiraganaDouble from '../../hiragana-digraphs.js';
-  import KatakanaDouble from '../../katakana-digraphs.js';
+
+  import Hiragana from '../../data/hiragana.js';
+  import Katakana from '../../data/katakana.js';
+  import HiraganaDouble from '../../data/hiragana-digraphs.js';
+  import KatakanaDouble from '../../data/katakana-digraphs.js';
 
   // Filter our objects for the use of navigating them; they contain empty objects for layout purposes
+
   let HiraganaFiltered = Hiragana.filter(function (el) { return el.character });
   let KatakanaFiltered = Katakana.filter(function (el) { return el.character });
   let HiraganaDoubleFiltered = HiraganaDouble.filter(function (el) { return el.character });
@@ -67,6 +62,14 @@
      : (language == "hiragana-digraphs") ? HiraganaDoubleFiltered
      : KatakanaDoubleFiltered;
 
+  // Position box in viewport
+  let viewportWidth;
+  let viewportHeight;
+  let boxWidth;
+  $: boxWidth = viewportWidth/1;
+
+  // Slideshow state
+
   let current = tweened(0, {
     duration: 200,
     easing: cubicIn
@@ -79,7 +82,8 @@
   function prev(e) { $current = clamp( --$current, 0, currentDataSet.length-1 ); }
   function next(e) { $current = clamp( ++$current, 0, currentDataSet.length-1 ); }
 
-  // Shortcuts
+  // Keyboard shortcuts
+
   const ARROW_LEFT = 37;
   const ARROW_RIGHT = 39;
 
@@ -91,6 +95,10 @@
           next();
       }
   }
+
+  // Sound functionality
+
+  let audioBox;
 
   function playSound() {
       audioBox.play();

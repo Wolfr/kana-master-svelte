@@ -2,7 +2,6 @@
   import { url, params } from '@sveltech/routify';
   import Quiz from '../../../Quiz.svelte';
   import ContentArea from '../../../UI/ContentArea.svelte';
-
   import { quizSettings } from '../../../stores/quizsettings.js';
 
 </script>
@@ -16,8 +15,9 @@
         <Quiz
             quizLength="{$quizSettings[0].quizLength}"
             useHiragana="{$quizSettings[0].hiragana}"
+            useHiraganaDouble="{$quizSettings[0].useHiraganaDouble}"
             useKatakana="{$quizSettings[0].katakana}"
-            includeDiacritics="{$quizSettings[0].diacritics}"
+            useKatakanaDouble="{$quizSettings[0].useKatakanaDouble}"
         />
     </ContentArea>
 </div>
