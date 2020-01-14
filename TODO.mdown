@@ -2,10 +2,9 @@
 
 ## General
 
-* Kill scroll on body overflow hidden
-* Make favicon in browser simply the book without the background
-* if you click the sound enabled icon, you should get a toast: Sound enabled
-* WBN: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
+* Make favicon in browser simply the book without the background - Clean up the design file in Figma
+* If you click the sound enabled icon, you should get a toast: Sound enabled
+* Would be nice: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 
 ## Detail
 
@@ -17,22 +16,15 @@
 
 ## Quiz settings
 
-* Sort out settings: label for checkboxes should be:
-  * “Chosen syllabograms”, then values:
-    * Hiragana - All monographs and diacritics
-    * Hiragana - All digraphs, with diacritics
-    * Katakana - All monographs and diacritics
-    * Katakana - All digraphs, with diacritics
-* Sort out the quiz data so it fits with this data (should actually be the same as the data from the home page but with empty items filtered)
-* Implement option to randomize order
-* Quiz question limit: Should be 10, 20, 30 or All characters
+* Quiz settings - just read the settings data from the store, no need to pass all the data to the quiz that’s just a bad way to code it
+* Quiz question limit: Should be 10, 20, 30 or All characters?
 
 ## Quiz actual
  
 * Fix autofocus on the quiz actual
 * Center the view of the quiz actual
-* The boxes should already be there to give you a view of your progress
+* The quiz boxes should already be there to give you a view of your progress
 
 ## Results
 
-* Implement a way to view quiz results (see screenshot)
+* Implement a way to view quiz results (see screenshot in folder kanamaster2020)
