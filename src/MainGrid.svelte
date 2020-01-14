@@ -57,7 +57,7 @@
 </NavBar>
 
 <ContentArea>
-    <ul class="c-character-grid">
+    <ul class="c-character-grid" class:c-character-grid--digraphs={urlLang.match(/digraph/)}>
         {#each dataset as character }
             {#if character.character == ""}
                 <li class="c-character-grid__item">

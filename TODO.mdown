@@ -6,10 +6,6 @@
 * If you click the sound enabled icon, you should get a toast: Sound enabled
 * Would be nice: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 
-## List view
-
-* Improvement: The digraphs only show 3 characters per row, not 5 characters
-
 ## Detail
 
 * Make the back button more like a ghost button

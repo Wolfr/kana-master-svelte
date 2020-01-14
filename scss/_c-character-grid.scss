@@ -8,6 +8,20 @@
   background: #FFF;
 }
 
+.c-character-grid__item:nth-child(5n) {
+  border-right-width: 0;
+}
+
+.c-character-grid--digraphs {
+  grid-template-columns: 1fr 1fr 1fr;
+  .c-character-grid__item:nth-child(5n) {
+    border-right-width: 1px;
+  }
+  .c-character-grid__item:nth-child(3n) {
+    border-right-width: 0;
+  }
+}
+
 .c-character-grid__item {
   border-bottom: 1px solid #CCC;
   border-right: 1px solid #CCC;
@@ -31,8 +45,4 @@
     color: #000;
     font-family: sans-serif;
   }
-}
-
-.c-character-grid__item:nth-child(5n) {
-  border-right: none;
 }
