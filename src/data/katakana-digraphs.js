@@ -1,205 +1,146 @@
 export default [
   {
-      "character": "キャ",
-      "romaji":"kya",
-      },
-
+    "character": "キャ",
+    "romaji":"kya",
+  },
   {
-      "character": "キュ",
-      "romaji":"kyu",
-      },
-
+    "character": "キュ",
+    "romaji":"kyu",
+  },
   {
-      "character": "キョ",
-      "romaji":"kyo",
-      },
-
-
-  // 2
-
+    "character": "キョ",
+    "romaji":"kyo",
+  },
   {
-      "character": "シャ",
-      "romaji":"sha",
-      },
-
+    "character": "シャ",
+    "romaji":"sha",
+  },
   {
-      "character": "シュ",
-      "romaji":"shu",
-      },
-
+    "character": "シュ",
+    "romaji":"shu",
+  },
   {
-      "character": "ショ",
-      "romaji":"sho",
-      },
-
-  // 3
-
+    "character": "ショ",
+    "romaji":"sho",
+  },
   {
-      "character": "チャ",
-      "romaji":"cha",
-      },
-
+    "character": "チャ",
+    "romaji":"cha",
+  },
   {
-      "character": "チュ",
-      "romaji":"chu",
-      },
-
+    "character": "チュ",
+    "romaji":"chu",
+  },
   {
-      "character": "チョ",
-      "romaji":"cho",
-      },
-
-  // 4
-
+    "character": "チョ",
+    "romaji":"cho",
+  },
   {
-      "character": "ニャ",
-      "romaji":"nya",
-      },
-
+    "character": "ニャ",
+    "romaji":"nya",
+  },
   {
-      "character": "ニュ",
-      "romaji":"nyu",
-      },
-
+    "character": "ニュ",
+    "romaji":"nyu",
+  },
   {
-      "character": "ニョ",
-      "romaji":"nyo",
-      },
-
-  // 5
-
+    "character": "ニョ",
+    "romaji":"nyo",
+  },
   {
-      "character": "ヒャ",
-      "romaji":"hya",
-      },
-
+    "character": "ヒャ",
+    "romaji":"hya",
+  },
   {
-      "character": "ヒュ",
-      "romaji":"hyu",
-      },
-
+    "character": "ヒュ",
+    "romaji":"hyu",
+  },
   {
-      "character": "ヒョ",
-      "romaji":"hyo",
-      },
-
-  // 6
-
+    "character": "ヒョ",
+    "romaji":"hyo",
+  },
   {
-      "character": "ミャ",
-      "romaji":"mya",
-      },
-
+    "character": "ミャ",
+    "romaji":"mya",
+  },
   {
-      "character": "ミュ",
-      "romaji":"myu",
-      },
-
+    "character": "ミュ",
+    "romaji":"myu",
+  },
   {
-      "character": "ミョ",
-      "romaji":"myo",
-      },
-
-  // 7
-
+    "character": "ミョ",
+    "romaji":"myo",
+  },
   {
-      "character": "リャ",
-      "romaji":"rya",
-      },
-
+    "character": "リャ",
+    "romaji":"rya",
+  },
   {
-      "character": "リュ",
-      "romaji":"ryu",
-      },
-
+    "character": "リュ",
+    "romaji":"ryu",
+  },
   {
-      "character": "リョ",
-      "romaji":"ryo",
-      },
-
-  // 8 -- WITH DIACRITICS
-
+    "character": "リョ",
+    "romaji":"ryo",
+  },
   {
-      "character": "ギャ",
-      "romaji":"gya",
-      },
-
+    "character": "ギャ",
+    "romaji":"gya",
+  },
   {
-      "character": "ギュ",
-      "romaji":"gyu",
-      },
-
+    "character": "ギュ",
+    "romaji":"gyu",
+  },
   {
-      "character": "ギョ",
-      "romaji":"gyo",
-      },
-
-  // 9
-
+    "character": "ギョ",
+    "romaji":"gyo",
+  },
   {
-      "character": "ジャ",
-      "romaji":"ja",
-      },
-
+    "character": "ジャ",
+    "romaji":"ja",
+  },
   {
-      "character": "ジュ",
-      "romaji":"ju",
-      },
-
+    "character": "ジュ",
+    "romaji":"ju",
+  },
   {
-      "character": "ジョ",
-      "romaji":"jo",
-      },
-
-  // 10
-
+    "character": "ジョ",
+    "romaji":"jo",
+  },
   {
-      "character": "ヂャ",
-      "romaji":"ja",
-      },
-
+    "character": "ヂャ",
+    "romaji":"ja",
+  },
   {
-      "character": "ヂュ",
-      "romaji":"ju",
-      },
-
+    "character": "ヂュ",
+    "romaji":"ju",
+  },
   {
-      "character": "ヂョ",
-      "romaji":"jo",
-      },
-
-  // 11
-
+    "character": "ヂョ",
+    "romaji":"jo",
+  },
   {
-      "character": "ビャ",
-      "romaji":"bya",
-      },
-
+    "character": "ビャ",
+    "romaji":"bya",
+  },
   {
-      "character": "ビュ",
-      "romaji":"byu",
-      },
-
+    "character": "ビュ",
+    "romaji":"byu",
+  },
   {
-      "character": "ビョ",
-      "romaji":"byo",
-      },
-
-  // 12
-
+    "character": "ビョ",
+    "romaji":"byo",
+  },
   {
-      "character": "ピャ",
-      "romaji":"pya",
-      },
-
+    "character": "ピャ",
+    "romaji":"pya",
+  },
   {
-      "character": "ピュ",
-      "romaji":"pyu",
-      },
-
+    "character": "ピュ",
+    "romaji":"pyu",
+  },
   {
-      "character": "ピョ",
-      "romaji":"pyo",
-      },
-
-  ];
+    "character": "ピョ",
+    "romaji":"pyo",
+  },
+];

@@ -25,9 +25,11 @@
 
     import { quizSettings } from '../../stores/quizsettings.js';
 
-	function handleRadioGroupSendValue(event) {
+    function handleRadioGroupSendValue(event) {
         $quizSettings[0].quizLength = event.detail.text;
-	}
+    }
+    
+    $: console.log($quizSettings);
 
 </script>
 

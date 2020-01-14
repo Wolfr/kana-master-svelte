@@ -12,12 +12,6 @@
 
 <div class="c-scroll-context">
     <ContentArea spacing>
-        <Quiz
-            quizLength="{$quizSettings[0].quizLength}"
-            useHiragana="{$quizSettings[0].hiragana}"
-            useHiraganaDouble="{$quizSettings[0].useHiraganaDouble}"
-            useKatakana="{$quizSettings[0].katakana}"
-            useKatakanaDouble="{$quizSettings[0].useKatakanaDouble}"
-        />
+        <Quiz />
     </ContentArea>
 </div>

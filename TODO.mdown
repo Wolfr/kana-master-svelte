@@ -6,6 +6,10 @@
 * If you click the sound enabled icon, you should get a toast: Sound enabled
 * Would be nice: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
 
+## List view
+
+* Improvement: The digraphs only show 3 characters per row, not 5 characters
+
 ## Detail
 
 * Make the back button more like a ghost button
@@ -13,11 +17,6 @@
 * Implement nice transition on drag on detail page
 * Filter the data on detail page so we only show the items that have data when doing next/prev
 * Add page titles for every character on detail page using svelte:head
-
-## Quiz settings
-
-* Quiz settings - just read the settings data from the store, no need to pass all the data to the quiz that’s just a bad way to code it
-* Quiz question limit: Should be 10, 20, 30 or All characters?
 
 ## Quiz actual
  

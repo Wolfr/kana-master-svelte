@@ -12,7 +12,7 @@
   import Katakana from './data/katakana.js';
   import KatakanaDouble from './data/katakana-digraphs.js';
 
-  // Filter data
+  // Filter data - Remove empty parts meant for layout purposes on grid overview
   let HiraganaFiltered = Hiragana.filter(function (el) { return el.character });
   let HiraganaDoubleFiltered = HiraganaDouble.filter(function (el) { return el.character });
   let KatakanaFiltered = Katakana.filter(function (el) { return el.character });
@@ -21,20 +21,23 @@
   import { getRandom } from './getRandom.js';
 
   // Quiz settings
-  export let quizLength = 5;
-  export let useHiragana = true;
-  export let useKatakana = false;
-  export let useHiraganaDouble = false;
-  export let useKatakanaDouble = false;
+  import { quizSettings } from './stores/quizsettings.js';
 
+  let quizLength =  $quizSettings[0].quizLength;
 
-  // Todo, make sure we only provide the specified options in our quiz
-  let dataset = _.unionBy(KatakanaFiltered, HiraganaFiltered, HiraganaDoubleFiltered, KatakanaDoubleFiltered);
+  let activeDataSets = [];
+  if ($quizSettings[0].hiragana) { activeDataSets = activeDataSets.concat(HiraganaFiltered); }
+  if ($quizSettings[0].katakana) { activeDataSets = activeDataSets.concat(KatakanaFiltered); }
+  if ($quizSettings[0].hiraganaDouble) { activeDataSets = activeDataSets.concat(HiraganaDoubleFiltered); }
+  if ($quizSettings[0].katakanaDouble) { activeDataSets = activeDataSets.concat(KatakanaDoubleFiltered); }
+  let dataset = _.union(activeDataSets); 
+
+  $: console.log(quizLength);
+  $: console.log(dataset);
+
   let quizOptions = getRandom(dataset, quizLength);
 
-
-
-  // Quiz locgic and validation
+  // Quiz logic and validation
 
   let currentQuizQuestion = 0;
   let answersValid = [];
@@ -99,7 +102,7 @@
              <input type="hidden" bind:value={correctValue}>
              <!-- svelte-ignore a11y-autofocus -->
              <Input type="text" center autofocus bind:value={currentValue} />
-             <Button block variant="primary" classValue="u-mt">Next</Button>
+             <Button block variant="primary" classValue="u-mt" on:click={advance}>Next</Button>
           </div>
         {/if}
     {/each}
