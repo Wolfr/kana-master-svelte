@@ -28,8 +28,6 @@
     function handleRadioGroupSendValue(event) {
         $quizSettings[0].quizLength = event.detail.text;
     }
-    
-    $: console.log($quizSettings);
 
 </script>
 

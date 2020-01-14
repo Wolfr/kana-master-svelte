@@ -32,9 +32,6 @@
   if ($quizSettings[0].katakanaDouble) { activeDataSets = activeDataSets.concat(KatakanaDoubleFiltered); }
   let dataset = _.union(activeDataSets); 
 
-  $: console.log(quizLength);
-  $: console.log(dataset);
-
   let quizOptions = getRandom(dataset, quizLength);
 
   // Quiz logic and validation
