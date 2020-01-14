@@ -10,10 +10,7 @@
 ## Detail
 
 * Make the back button more like a ghost button
-* If you click the holder in the center, you should go to the next item
-* Implement nice transition on drag on detail page
-* Filter the data on detail page so we only show the items that have data when doing next/prev
-* Add page titles for every character on detail page using svelte:head
+* Implement a way to go to the next item by swiping
 
 ## Quiz actual
  
