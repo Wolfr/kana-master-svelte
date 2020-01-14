@@ -16,7 +16,8 @@
 
 ## Quiz actual
  
-* Fix autofocus on the quiz actual
+* Implement "Quiz done! You got 4 out of 5 right."
+* Fix autofocus on the quiz actual; maybe try instead of autofocus property to focus via JS function after {advance}
 * Center the view of the quiz actual
 * The quiz boxes should already be there to give you a view of your progress
 
