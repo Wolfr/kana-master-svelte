@@ -3,19 +3,9 @@
   "theme_color": "#386942",
   "name": "Kana Master",
   "short_name": "Kana Master",
-  "start_url": "/index",
-	"display": "standalone",
+  "start_url": ".",
+  "display": "standalone",
   "icons": [
-    {
-      "src": "/images/kana-master-1024.png",
-      "sizes": "1024x1024",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/kana-master-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
     {
       "src": "/images/kana-master-192.png",
       "sizes": "192x192",
