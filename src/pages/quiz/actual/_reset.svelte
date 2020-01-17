@@ -11,7 +11,7 @@
 </svelte:head>
 
 <div class="c-scroll-context">
-    <ContentArea spacing alt>
+    <ContentArea spacing alt flex>
         <Quiz />
     </ContentArea>
 </div>

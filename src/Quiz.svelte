@@ -1,4 +1,6 @@
 <script>
+  import { goto } from '@sveltech/routify';
+
 
   import { url, params } from '@sveltech/routify';
   import _ from 'lodash';
@@ -41,6 +43,11 @@
   let answersValid = [];
   let quizMaxLength = quizOptions.length;
   let quizDone = false;
+  $: {
+      if (quizDone) {
+          $goto('../finished');
+      }
+  }
 
   let currentValue = "";
   let correctValue = "";
@@ -75,6 +82,11 @@
         margin: 2rem 0;
     }
 
+    form {
+        margin: auto;
+        width: 100%;
+    }
+
 </style>
 
 {#if !quizDone}
@@ -90,23 +102,16 @@
           </div>
         {/if}
     {/each}
+
+    <div class="c-validation-boxes">
+        {#each answersValid as item}
+          {#if item}
+            <div class="c-validation-boxes__box c-validation-boxes__box--success"></div>
+          {:else}
+            <div class="c-validation-boxes__box c-validation-boxes__box--error"></div>
+          {/if}
+      {/each}
+    </div>
+
 </form>
-{:else}
-<div class="c-quiz-holder">
-    <p>
-        Quiz done!
-    </p>
-    <Button block href="{$url('/index')}">Go to main screen</Button>
-</div>
 {/if}
-
-<div class="c-validation-boxes">
-    {#each answersValid as item}
-      {#if item}
-        <div class="c-validation-boxes__box c-validation-boxes__box--success"></div>
-      {:else}
-        <div class="c-validation-boxes__box c-validation-boxes__box--error"></div>
-      {/if}
-  {/each}
-</div>
-

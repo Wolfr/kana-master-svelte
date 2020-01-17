@@ -1,16 +1,20 @@
 /* ==========================================================================
-   c-quiz-holder
+   c-quiz-finished
    ========================================================================== */
 
-.c-quiz-holder {
+.c-quiz-finished {
+  box-shadow: 0 0.4rem 0 0.1rem #CCC;
   margin: auto;
-  max-width: 50rem;
+  background: #FFF;
   padding: 3rem;
+  text-align: center;
+  max-height: 30rem;
   border: 0.1rem solid #CCC;
   @media (-webkit-min-device-pixel-ratio: 1.3) {
     border-width: 0.05rem;
   }
-  box-shadow: 0 0.4rem 0 0.1rem #CCC;
-  margin: 1rem auto;
-  background: #FFF;
+}
+
+.c-quiz-finished p {
+  margin-bottom: 1rem;
 }

@@ -4,6 +4,14 @@
   Used for radios, for link style behavior use c-segmented-control-radio
    ========================================================================== */
 
+/* Variables
+   ========================================================================== */
+
+$c-segmented-control-radio-bg-color: #DDD !default;
+
+/* Component
+   ========================================================================== */
+
 .c-segmented-control-radio {
   width: 100%;
   display: flex;
@@ -19,9 +27,16 @@
   text-align: center;
   text-decoration: none;
   color: #333;
-  background: #DDD;
-  border: 1px solid #CCC;
+  background: $c-segmented-control-radio-bg-color;
+  border: 0.1rem solid #CCC;
   border-right: none;
+  &:hover,
+  &:focus {
+    background: lighten($c-segmented-control-bg-color, 10%);
+  }
+  &:active {
+    background: darken($c-segmented-control-bg-color, 10%);
+  }
 }
 
 .c-segmented-control-radio__item--active label {
@@ -42,7 +57,7 @@
 .c-segmented-control-radio__item:last-child label {
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-  border-right: 1px solid #CCC;
+  border-right: 0.1rem solid #CCC;
   @media (-webkit-min-device-pixel-ratio: 1.3) {
     border-width: 0.05rem;
   }

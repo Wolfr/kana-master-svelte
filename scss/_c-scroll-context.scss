@@ -11,22 +11,3 @@
 .c-scroll-context > * {
   flex: 0 1 auto;
 }
-
-@media (min-width: 900px){
-
-  html, body {
-    background: #666;
-  }
-
-  body {
-    display: flex;
-  }
-
-  .c-scroll-context {
-    position: relative;
-    height: 64rem;
-    width: 37.5rem;
-    margin: auto;
-  }
-
-}
