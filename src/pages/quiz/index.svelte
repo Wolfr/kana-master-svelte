@@ -79,7 +79,7 @@
         <li>
             <Toggle id="useHiraganaDouble" bind:checked={$quizSettings[0].hiraganaDouble} />
             <label for="useHiraganaDouble">
-                Hiragana
+                Hiragana (Double)
                 <span>All digraphs, with diacritics</span>
             </label>
         </li>
@@ -92,7 +92,7 @@
         <li>
             <Toggle id="useKatakanaDouble" bind:checked={$quizSettings[0].katakanaDouble} />
             <label for="useKatakanaDouble">
-                Katakana
+                Katakana (Double)
                 <span>All digraphs, with diacritics</span>
             </label>
         </li>

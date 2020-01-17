@@ -5,17 +5,16 @@
 * Implement dark mode
 * Make favicon in browser simply the book without the background - Clean up the design file in Figma
 * If you click the sound enabled icon, you should get a toast: Sound enabled
-* Would be nice: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc
+* Would be nice: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc - look into Jakobs solution
 
 ## Detail
 
-* Make the back button more like a ghost button
 * Implement a way to go to the next item by swiping
 
 ## Quiz actual
  
+* Add validation to the field - cannot be empty - wiggle when it is empty?
 * Implement "Quiz done! You got 4 out of 5 right."
-* Fix autofocus on the quiz actual; maybe try instead of autofocus property to focus via JS function after {advance}
 * Center the view of the quiz actual
 * The quiz boxes should already be there to give you a view of your progress
 

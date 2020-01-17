@@ -1,5 +1,5 @@
 /* ==========================================================================
-  Component: navbar
+  c-navbar
   ---
   A container for navigational elements
    ========================================================================== */
@@ -9,7 +9,6 @@
 
 $c-bar-size-padding: 2rem !default;
 $c-bar-size-regular: 6.5rem !default;
-$c-bar-size-large: 9.5rem !default;
 
 /* Component
    ========================================================================== */
@@ -20,10 +19,6 @@ $c-bar-size-large: 9.5rem !default;
   width: 100%;
   display: flex;
   align-items: center;
-}
-
-.c-navbar--large {
-  height: $c-bar-size-large;
 }
 
 .c-navbar--no-padding {
@@ -52,3 +47,10 @@ $c-bar-size-large: 9.5rem !default;
 .c-navbar--bordered-bottom {
   border-bottom: 0.1rem solid #CCC;
 }
+
+.c-navbar.c-navbar {
+  @media (-webkit-min-device-pixel-ratio: 1.3) {
+    border-width: 0.05rem;
+  }
+}
+

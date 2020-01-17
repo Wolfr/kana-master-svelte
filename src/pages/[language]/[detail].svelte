@@ -71,7 +71,7 @@
   // Slideshow state
 
   let current = tweened(0, {
-    duration: 200,
+    duration: 0,
     easing: cubicIn
   });
 

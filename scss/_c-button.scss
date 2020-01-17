@@ -1,5 +1,5 @@
 /* ==========================================================================
-  Button
+  c-button
    ========================================================================== */
 
 /* Variables
@@ -22,6 +22,7 @@ $c-button-link-color: $c-button-primary-color !default;
   font-family: $g-font-family;
   appearance: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .c-button.c-button--icon-only {

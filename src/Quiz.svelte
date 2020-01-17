@@ -1,4 +1,5 @@
 <script>
+
   import { url, params } from '@sveltech/routify';
   import _ from 'lodash';
 
@@ -30,7 +31,7 @@
   if ($quizSettings[0].katakana) { activeDataSets = activeDataSets.concat(KatakanaFiltered); }
   if ($quizSettings[0].hiraganaDouble) { activeDataSets = activeDataSets.concat(HiraganaDoubleFiltered); }
   if ($quizSettings[0].katakanaDouble) { activeDataSets = activeDataSets.concat(KatakanaDoubleFiltered); }
-  let dataset = _.union(activeDataSets); 
+  let dataset = _.union(activeDataSets);
 
   let quizOptions = getRandom(dataset, quizLength);
 
@@ -69,19 +70,6 @@
 
 <style>
 
-    .question {
-        font-size: 6rem;
-        text-align: center;
-    }
-
-    .holder {
-        padding: 3rem;
-        border: 1px solid #CCC;
-        box-shadow: 0 4px 0 1px #CCC;
-        margin: 1rem 1rem 2rem;
-        background: #FFF;
-    }
-
     p {
         text-align: center;
         margin: 2rem 0;
@@ -94,18 +82,17 @@
     {#each quizOptions as option, index}
         {#if currentQuizQuestion == index}
          <p>Enter the right characters. {quizOptions.length - index} remaining.</p>
-         <div class="holder">
-             <div class="question">{option.character}</div>
+         <div class="c-quiz-holder">
+             <div class="c-quiz-question">{option.character}</div>
              <input type="hidden" bind:value={correctValue}>
-             <!-- svelte-ignore a11y-autofocus -->
-             <Input type="text" center autofocus bind:value={currentValue} />
+             <Input type="text" autofocus center bind:value={currentValue} />
              <Button block variant="primary" classValue="u-mt" on:click={advance}>Next</Button>
           </div>
         {/if}
     {/each}
 </form>
 {:else}
-<div class="holder">
+<div class="c-quiz-holder">
     <p>
         Quiz done!
     </p>
