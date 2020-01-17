@@ -14,9 +14,11 @@
 ## Quiz actual
  
 * Add validation to the field - cannot be empty - wiggle when it is empty?
-* Implement "Quiz done! You got 4 out of 5 right."
-* Center the view of the quiz actual
-* The quiz boxes should already be there to give you a view of your progress
+* Investigate how we can keep the keyboard up while taking the quiz on mobile
+* Implement "Quiz done! You got 4 out of 5 right." Write latest quiz results to a store object?
+* The quiz validation boxes should already be there to give you a view of your progress
+* The quiz validation boxes should be limited to how many can fit on the screen on one line (divide view port width by expected box width)
+* Add an animated check mark when you get quiz results
 
 ## Results
 
