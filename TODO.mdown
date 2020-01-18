@@ -14,6 +14,8 @@
 ## Quiz actual
  
 * Add validation to the field - cannot be empty - wiggle when it is empty?
+* Also, check the correctness of the answers - if you enter Ka, or KA, it should be correct. So have to transfer the order to lowercase.
+* Make randomize an option just for debugging purposes
 * Investigate how we can keep the keyboard up while taking the quiz on mobile
 * Implement "Quiz done! You got 4 out of 5 right." Write latest quiz results to a store object?
 * The quiz validation boxes should already be there to give you a view of your progress
