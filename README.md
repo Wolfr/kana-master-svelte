@@ -1,3 +1,9 @@
+# Kana Master Web
+
+Web version of Kana master, which was originally an iOS app, released in 2015, to learn the Japanese kana.
+
+This repository serves as a way to show that Svelte can be used to build progressive web apps.
+
 ## Tech used
 
 * I used the Svelte JS template as a base. It lives at https://github.com/sveltejs/template.
