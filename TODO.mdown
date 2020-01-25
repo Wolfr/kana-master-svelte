@@ -8,6 +8,11 @@ The application works, but it could be more polished and feature complete.
 
 * Look into inset styles for correct look on iPhone X series
 * Implement dark mode
+* Implement an info screen with credits
+* Button icons
+  * Add a cog (settings) icon
+  * Add an info icon
+  * Add a close icon
 * Make favicon in browser simply the book without the background - Clean up the design file in Figma
 * If you click the sound enabled icon, you should get a toast: Sound enabled
 * Would be nice: Animate routes, like in Clank https://www.youtube.com/watch?v=2n1Ue7N1BCc - look into Jakobs solution
