@@ -4,4 +4,3 @@
 </script>
 
 <MainGrid pageTitle="Hiragana" urlLang="hiragana" dataset={Hiragana} />
-
