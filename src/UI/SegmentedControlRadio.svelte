@@ -21,6 +21,7 @@
                     id="radio-{index+1}"
                     name="group-radios"
                     value={item}
+                    autocomplete="off"
                     checked={activeIndex == index}
                     on:change={ () => activeIndex = index}
                     on:change={ () => sendValue(item) }
