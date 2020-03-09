@@ -7,32 +7,33 @@ This repository serves as a way to show that Svelte can be used to build progres
 ## Tech used
 
 * I used the Svelte JS template as a base. It lives at https://github.com/sveltejs/template.
-* For routing I used Routify: http://routify.now.sh/
+* For routing I used an early version of Routify: http://routify.dev
 
 ## Running the project
 
 Install the dependencies...
 
-```bash
-cd svelte-app
-npm install
+```npm install
 ```
 
 ...then start [Rollup](https://rollupjs.org):
 
-```bash
-npm run dev
+```npm run dev
 ```
 
 Navigate to [localhost:5000](http://localhost:5000).
 
 ## Compiling SCSS
 
+When the project starts you will not see any styles.
+
 Run
 
 ```bash
 npm run-script css-dev
 ```
+
+To compile SCSS.
 
 ## Building and running in production mode
 
@@ -44,5 +45,6 @@ npm run build
 
 ## Deploy
 
-`npm install -g now`
-`npm run build && cd public && now deploy --name kanamaster --prod -A ../now.json`
+```npm install -g now
+npm run build && cd public && now deploy --name kanamaster --prod -A ../now.json
+```
