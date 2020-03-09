@@ -18,6 +18,10 @@
         padding: 1.6rem;
     }
 
+    .c-content-area {
+        height: 100%;
+    }
+
 </style>
 
 <div class="c-content-area" class:alt={alt} class:spacing={spacing} class:flex={flex}>
