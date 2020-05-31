@@ -1,6 +1,6 @@
 # Development todo
 
-Current state: 0.5.
+Current state: 0.6
 
 The application works, but it could be more polished and feature complete.
 

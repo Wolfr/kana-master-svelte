@@ -1,5 +1,10 @@
 <script>
 
+    import { isActive, url } from "@sveltech/routify"
+    import { writable } from 'svelte/store';
+    import Transition from "../components/Transition.svelte"
+    const width = writable();
+
     import NavBar from '../UI/NavBar.svelte';
     import TabBar from '../UI/TabBar.svelte';
     import Toolbar from '../UI/Toolbar.svelte';
@@ -13,8 +18,6 @@
     import SegmentedControl from '../UI/SegmentedControl.svelte';
     import SegmentedControlItem from '../UI/SegmentedControlItem.svelte';
 
-    import { isActive, url } from '@sveltech/routify';
-
     const mainTabs = [
         ['./hiragana', 'Hiragana', 'hiragana'],
         ['./katakana', 'Katakana', 'katakana'],
@@ -23,10 +26,11 @@
 
 </script>
 
-<div class="c-scroll-context">
-    <slot></slot>
-
-    <NavBar borderPosition="top" background="alt">
-        <TabBar data="{mainTabs}" />
-    </NavBar>
+<div bind:offsetWidth={$width}>
+  <div class="c-scroll-context">
+    <slot decorator={Transition} scoped={{ width }} />
+  </div>
+  <NavBar borderPosition="top" background="alt">
+    <TabBar data="{mainTabs}" />
+  </NavBar>
 </div>
