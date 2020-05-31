@@ -1,7 +1,6 @@
 <script>
   import { goto } from '@sveltech/routify';
 
-
   import { url, params } from '@sveltech/routify';
   import _ from 'lodash';
 
@@ -43,6 +42,7 @@
   let answersValid = [];
   let quizMaxLength = quizOptions.length;
   let quizDone = false;
+
   $: {
       if (quizDone) {
           $goto('../finished');

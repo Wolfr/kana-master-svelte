@@ -166,7 +166,7 @@
     <Toolbar>
         <ToolbarGroup align="left">
             <ToolbarItem>
-                <Button icon="chevron-left" variant="ghost" href="{$url('../../')}">Back</Button>
+                <Button icon="chevron-left" variant="ghost" href="{$url('../')}">Back</Button>
             </ToolbarItem>
         </ToolbarGroup>
     </Toolbar>

@@ -6,8 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy'
 import del from 'del'
 import svg from 'rollup-plugin-svg';
-
-
+import postcss from 'rollup-plugin-postcss'
 
 const staticDir = 'static'
 const distDir = 'dist'
@@ -39,6 +38,7 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
         copyOnce: true,
         flatten: false
       }),
+      postcss(),
       svg(),
       svelte({
         // enable run-time checks when not in production
