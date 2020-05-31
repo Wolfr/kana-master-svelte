@@ -1,21 +1,29 @@
 <script>
+  
+  import NavBar from '../UI/NavBar.svelte';
+  import TabBar from '../UI/TabBar.svelte';
 
-  import { isActive, url } from '@sveltech/routify';
-  import { writable } from 'svelte/store';
-  import Transition from "../components/Transition.svelte"
-
-  const width = writable();
-
+  const mainTabs = [
+    ['/hiragana', 'Hiragana', 'hiragana'],
+    ['/katakana', 'Katakana', 'katakana'],
+    ['/quiz', 'Quiz', 'quiz']
+    ];
+  
 </script>
-
+    
 <style>
 
-  .relative-wrapper {
+  .flex-wrapper {
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
 </style>
 
-<div bind:offsetWidth={$width} class="relative-wrapper">
-  <slot decorator={Transition} scoped={{ width }} />
+<div class="flex-wrapper">
+  <slot />
+  <NavBar borderPosition="top" background="alt">
+      <TabBar data="{mainTabs}" />
+  </NavBar>
 </div>
